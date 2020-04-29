@@ -16,6 +16,10 @@ nav {
     top: 0;
     background-color: white;
 
+    left: 0px;
+    top: 0px;
+    z-index: 1;
+
 }
 
 .logo-container{
@@ -150,12 +154,17 @@ h2 {
 
 /* Gallery section starts here */
 .photo-albums-container {
+    background-color: blueviolet;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 .photo-albums-subcontainer {
     /* background-color: fuchsia; */
+    width: 800px;
     padding: 10px;
     display: flex;
-    justify-content: center;
     justify-content: space-between;
     align-items: center;
 }
@@ -299,3 +308,4 @@ footer a {
 .event-page-heading {
     text-align: left;
 }
+/* Slick Slider Section starts here */
