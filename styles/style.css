@@ -1,21 +1,23 @@
 body {
     font-family: 'Poppins', sans-serif;    
-    /* background-color:#1E406D; */
-    width: 1500px;
-    background-image: url(../images/bodyBackgrounds/dark-grey-terrazzo/dark-grey-terrazzo/dark-grey-terrazzo.png);
-   
+    background-color:rgb(48, 48, 95);
+    /* background-image: url(../images/bodyBackgrounds/dark-grey-terrazzo/dark-grey-terrazzo/dark-grey-terrazzo.png); */
+    /* background-image: url(../images/pic12.jpg); */
+    /* background-repeat: no-repeat; */
+    /* background-size: cover; */
+    margin: 0;
 
 }
 /* navigation bar starts here */
 nav {
     height: 65px;
-    width:1550px;
+    width: 100vw;
     display: flex;
-    border-bottom: solid grey 1px;
+    /* border-bottom: solid grey 1px; */
     align-items: center;
     position: fixed;
     top: 0;
-    background-color: white;
+    /* background-color: white; */
 
     left: 0px;
     top: 0px;
@@ -30,8 +32,11 @@ nav {
     margin-right: 200px;
 }
 .translator-container {
-    /* margin: 0 10px 0 0; */
-    /* background-color: purple; */
+    /* background-color: orange; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 220px;
 }
 .tabs-container {
     /* background-color: green; */
@@ -40,7 +45,7 @@ nav {
     justify-content: space-between;
     /* font-weight: bold; */
     /* font-size: 16px; */
-    margin: 0 70px 0 150px;
+    margin: 0 50px 0 130px;
 }
 .tab-button {
     text-decoration: none;
@@ -49,7 +54,7 @@ nav {
 .icon-container {
     /* background-color: pink; */
     width: 50px;
-    /* margin: 0 0 0 10px; */
+    margin: 0 40px 0 0;
 }
 .icon-container a i {
     /* width: 50px; */
@@ -58,50 +63,79 @@ nav {
 /* banner starts here */
 .main-container {
     /* background-color: red; */
-    width: 1500px;
+    width: 98.9vw; /* <<<<<<<<<<<< Controls ENTIRE PAGE WIDTH>>>>>>>>>>>>>>>>>>>>>>>>> */
     display: flex;
     flex-direction: column;
-
 }
 .banner-container {
-    background-image: url(../images/pic11.jpeg);
+    /* display: flex; */
+
+}
+.left-banner-container {
+    background-image: url(../images/pic14.jpeg);
     background-repeat: no-repeat;
     background-size: cover;
-    height: 700px;
+    /* height: 500px; */
     display: flex;
-    /* justify-content: center; */
+    justify-content: center;
     /* font-size: 40px; */
     font-weight: bolder;
     color: goldenrod;
-    /* background-color: orange; */
-    /* text-align: center; */
+    background-color: mediumturquoise;
+    text-align: center;
 
-    flex-direction: column;
+    /* flex-direction: column; */
     align-items: center;
 
-    padding-top: 110px;
-
+    /* padding-top: 110px; */
+    width: 100%;
+    /* height: 100%; */
+    height: 670px;
+    /* margin: 0; */
 
 }
+
+/* .right-banner-container {
+    background-color: white;
+    background-image: url(../images/);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width:45vw;
+    display: flex;
+    justify-content: center;
+    align-items: center; */
+    /* margin-top: 80px; */
+/* } */
+
 .banner-heading-container {
+    /* background-color: purple; */
+    /* padding-left: 10px; */
+    /* padding-bottom: 50px;  */
+    /* display: flex; */
+    /* justify-content: center;
+    align-items: center; */
 }
 .banner-subheading {
-    margin-left:400px;
-    padding-bottom: 200px;
-    margin-top: 0;
+    /* background-color: seagreen; */
+    /* margin-left:700px; */
+    /* padding-bottom: 100px; */
 }
-h2 {
-    text-align: center;
+img .flag {
+    width: 100px;
 }
+
 /* Second Main Subcontainer starts here */
 .second-main-subcontainer {
+    /* background-color: maroon; */
     color:white;
 }
 /* Mision and values section start here */
 .heading-container {
     padding: 10px 0 30px 0;
 }
+
 .mission-and-values-container {
+    /* background-color: yellowgreen; */
    padding: 0 300px 50px 300px;
    display: flex;
    flex-direction: column;
@@ -111,17 +145,21 @@ h2 {
     /* opacity: 0.3; */
 
 }
+h2 {
+    text-align: center;
+}
 .mission-heading-container {
 
 }
 
 /* Events start section Here */
-.events-container-container {
+.events-main-container {
     /* background-color: #e43038; */
 }
 .events-container {
+    /* background-color: orange; */
     /* padding-bottom: 50px; */
-    padding: 0 50px 50px 50px;
+    padding: 0 0 50px 0;
     /* background-color: #e43038; */
     display: flex;
     flex-direction: column;
@@ -130,7 +168,6 @@ h2 {
 .user-instructions {
  /* background-color: rgb(211, 204, 204); */
  margin-bottom: 50px;
- padding: 0 10px;
  /* text-align: center; */
  /* width: 200px; */
 }
@@ -141,6 +178,7 @@ h2 {
     justify-content: center;
     justify-content: space-between;
     align-items: center;
+    width: 90vw;
 }
 .individual-event-container {
     background-color: white;
@@ -170,7 +208,7 @@ h2 {
 .events-image-container2 {
     width: 300px;
     height: 200px;
-    background-image: url(../images/christmas.jpg);
+    background-image: url(../images/christmas2.jpg);
     background-repeat: no-repeat;
     background-size: contain;
 
@@ -197,7 +235,7 @@ h2 {
 .photo-albums-subcontainer {
     /* background-color: fuchsia; */
     width: 800px;
-    padding: 10px;
+    padding: 10px 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -227,8 +265,8 @@ h2 {
 }
 
 /* Who we are section starts here */
-.who-we-are-continer {
-    padding: 0 50px 50px 50px;
+.who-we-are-container {
+    padding: 70px 0;
 }
 .who-we-are-subcontainer {
     display: flex;
@@ -253,7 +291,7 @@ h2 {
 
 /* Contacts section starts here */
 .contacts-container {
-    padding: 0 50px 50px 50px;
+    padding: 0 20px 100px 20px;
 }
 .contacts-subcontainer {
     display: flex;
@@ -265,8 +303,91 @@ h2 {
     flex-direction: row;
 } */
 
+/* Form section starts here>>>>>>>>>>>>>>> */
+
+.form-container {
+    box-sizing: border-box;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px 0 20px 45px;
+    color: black;
+    width: 600px;
+    /* padding-left: 40px; */
+
+  }
+  input[type=text], select, textarea {
+    width: 90%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+    margin-left: 45px;
+
+  }
+  label {
+    /* background-color: lawngreen; */
+    padding: 5px 5px 5px 0;
+    display: inline-block;
+    width: 200px;
+    margin-right: 20px;
+  }
+  
+  input[type=submit] {
+    background-color: #4CAF50;
+    color: white;
+
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: right;
+  }
+  
+  input[type=submit]:hover {
+    background-color: #45a049;
+  }
+ 
+  
+  .col-25 {
+    float: left;
+    width: 25%;
+    margin-top: 6px;
+  }
+  
+  .col-75 {
+    float: left;
+    width: 60%;
+    margin-top: 6px;
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
 .submit-button-container {
     text-align: center;
+    padding: 10px 0;
+}
+.submit-button {
+    background-color:rgb(84, 219, 84);
+    border:1px solid green;
+    border-radius: 4px;
+    padding: 10px 20px;
+}
+.submit-button:hover {
+    background-color: #45a049;
+  }
+.contacts-right-container {
+background-color: #f2f2f2;
+padding: 20px 20px 0 20px;
+height: 370px;
+border-radius: 4px;
+margin-top: 55px;
+}
+iframe {
+    border-radius: 4px;
 }
 /* footer starts here */
 footer {
@@ -329,6 +450,13 @@ footer a {
     padding:5px;
 }
 
+
+
+
+
+
+
+
 /* *****EVENTS PAGE SECTION  STARTS HERE****** */
 .page-title-container {
     margin-top: 150px;
@@ -343,3 +471,18 @@ footer a {
     text-align: left;
 }
 /* Slick Slider Section starts here */
+
+
+
+
+
+
+
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+    .col-25, .col-75, input[type=submit] {
+      width: 100%;
+      margin-top: 0;
+    }
+  }
