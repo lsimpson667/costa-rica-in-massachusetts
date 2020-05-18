@@ -2,7 +2,8 @@
 $(document).ready(() => {
     $(".photo-albums-subcontainer").slick( {
         dots: true,
-  speed: 300,
+        autoplay: true,
+        autoplaySpeed: 18000,
   slidesToShow: 3,
   slidesToScroll: 3,
   responsive: [
@@ -36,5 +37,3 @@ $(document).ready(() => {
 
 });
 })
-
-// Contacts/inputs start here

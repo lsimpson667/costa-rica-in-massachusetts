@@ -1,132 +1,111 @@
 body {
     font-family: 'Poppins', sans-serif;    
     background-color:rgb(48, 48, 95);
-    /* background-image: url(../images/bodyBackgrounds/dark-grey-terrazzo/dark-grey-terrazzo/dark-grey-terrazzo.png); */
-    /* background-image: url(../images/pic12.jpg); */
-    /* background-repeat: no-repeat; */
-    /* background-size: cover; */
     margin: 0;
-
 }
+/* GTRANSLATE style starts here */
+a.gflag {vertical-align:middle;font-size:32px;padding:1px 0;background-repeat:no-repeat;background-image:url(//gtranslate.net/flags/32.png);}
+a.gflag img {border:0;}
+a.gflag:hover {background-image:url(//gtranslate.net/flags/32a.png);}
+#goog-gt-tt {display:none !important;}
+.goog-te-banner-frame {display:none !important;}
+.goog-te-menu-value:hover {text-decoration:none !important;}
+body {top:0 !important;}
+#google_translate_element2 {display:none!important;}
+/* GTRANSLATE style ends here */
+
 /* navigation bar starts here */
 nav {
+    background-color:rgb(48, 48, 95);
     height: 65px;
-    width: 100vw;
+    width: 100%;
     display: flex;
-    /* border-bottom: solid grey 1px; */
+    border-bottom: solid white 1px;
     align-items: center;
     position: fixed;
     top: 0;
-    /* background-color: white; */
-
     left: 0px;
     top: 0px;
     z-index: 1;
-
 }
 
 .logo-container{
-    /* background-color: orange; */
     width:100px;
     margin-left:40px;
     margin-right: 200px;
 }
 .translator-container {
-    /* background-color: orange; */
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 220px;
+    width: 300px;
 }
+
+.spain-icon-container {
+    padding-left: 5px;
+}
+select.translator-select  {
+    padding-left: 0px;
+    margin-left: 5px;
+    width: 155px;
+    padding: 10px 10px;
+}
+
 .tabs-container {
-    /* background-color: green; */
-    width: 700px;
+    width: 750px;
     display: flex;
     justify-content: space-between;
-    /* font-weight: bold; */
-    /* font-size: 16px; */
     margin: 0 50px 0 130px;
 }
 .tab-button {
     text-decoration: none;
-    color: Black;
+    color: white;    
 }
 .icon-container {
-    /* background-color: pink; */
     width: 50px;
     margin: 0 40px 0 0;
 }
 .icon-container a i {
-    /* width: 50px; */
+    color: white;    
     
 }
 /* banner starts here */
 .main-container {
-    /* background-color: red; */
     width: 98.9vw; /* <<<<<<<<<<<< Controls ENTIRE PAGE WIDTH>>>>>>>>>>>>>>>>>>>>>>>>> */
     display: flex;
     flex-direction: column;
 }
-.banner-container {
-    /* display: flex; */
 
-}
-.left-banner-container {
+.banner-container {
     background-image: url(../images/pic14.jpeg);
     background-repeat: no-repeat;
     background-size: cover;
-    /* height: 500px; */
     display: flex;
     justify-content: center;
-    /* font-size: 40px; */
     font-weight: bolder;
     color: goldenrod;
     background-color: mediumturquoise;
     text-align: center;
-
-    /* flex-direction: column; */
     align-items: center;
-
-    /* padding-top: 110px; */
     width: 100%;
-    /* height: 100%; */
-    height: 670px;
-    /* margin: 0; */
+    height: 690px;
+    margin-top: 60px;
 
 }
-
-/* .right-banner-container {
-    background-color: white;
-    background-image: url(../images/);
-    background-repeat: no-repeat;
-    background-size: contain;
-    width:45vw;
-    display: flex;
-    justify-content: center;
-    align-items: center; */
-    /* margin-top: 80px; */
-/* } */
 
 .banner-heading-container {
-    /* background-color: purple; */
-    /* padding-left: 10px; */
-    /* padding-bottom: 50px;  */
-    /* display: flex; */
-    /* justify-content: center;
-    align-items: center; */
-}
-.banner-subheading {
-    /* background-color: seagreen; */
-    /* margin-left:700px; */
-    /* padding-bottom: 100px; */
-}
-img .flag {
-    width: 100px;
+    background-color: rgba(10, 10, 10, 0.60);
+    padding: 0 50px 20px 50px;
+    border-radius: 7px;
+    margin-top: 120px;
+
 }
 
-/* Second Main Subcontainer starts here */
-.second-main-subcontainer {
-    /* background-color: maroon; */
+.flag {
+    width: 250px;
+    border-radius: 7px;
+}
+
+/* Main Subcontainer starts here */
+.main-subcontainer {
     color:white;
 }
 /* Mision and values section start here */
@@ -135,44 +114,28 @@ img .flag {
 }
 
 .mission-and-values-container {
-    /* background-color: yellowgreen; */
+    background-color: goldenrod;
    padding: 0 300px 50px 300px;
    display: flex;
    flex-direction: column;
    text-align: center;
 }
-.mission-and-values-container img {
-    /* opacity: 0.3; */
 
-}
 h2 {
     text-align: center;
 }
-.mission-heading-container {
-
-}
 
 /* Events start section Here */
-.events-main-container {
-    /* background-color: #e43038; */
-}
 .events-container {
-    /* background-color: orange; */
-    /* padding-bottom: 50px; */
     padding: 0 0 50px 0;
-    /* background-color: #e43038; */
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 .user-instructions {
- /* background-color: rgb(211, 204, 204); */
  margin-bottom: 50px;
- /* text-align: center; */
- /* width: 200px; */
 }
 .events-subcontainer {
-    /* background-color: pink; */
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -185,18 +148,13 @@ h2 {
     width: 400px;
     height: 300px;
     border: 1px solid black;
+    border-radius: 7px;
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
     margin: 0 5px;
     padding-top: 20px;
-    /* justify-content: space-between; */
-
-    /* padding: 20px 200px; */
-
-
-
 }
 .events-image-container1 {
     width: 300px;
@@ -204,6 +162,8 @@ h2 {
     background-image: url(../images/bbq.jpg);
     background-repeat: no-repeat;
     background-size: contain;
+    border-radius: 7px;
+
 }
 .events-image-container2 {
     width: 300px;
@@ -211,6 +171,7 @@ h2 {
     background-image: url(../images/christmas2.jpg);
     background-repeat: no-repeat;
     background-size: contain;
+    border-radius: 7px;
 
 }
 .events-image-container3 {
@@ -218,6 +179,8 @@ h2 {
     height: 200px;    
     background-image: url(../images/microphone.jpg);
     background-size: contain;
+    border-radius: 7px;
+
 }
 .individual-event-container a {
     text-decoration: none;
@@ -225,29 +188,38 @@ h2 {
 }
 
 /* Gallery section starts here */
+.featured-video {
+    text-align:center;
+}
+video {
+    border-radius: 7px;
+    border: 5px solid white;
+}
 .photo-albums-container {
-    /* background-color: rgb(12, 14, 150); */
+    color: white;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 .photo-albums-subcontainer {
-    /* background-color: fuchsia; */
-    width: 800px;
-    padding: 10px 0;
+    color: white;
+    width: 1300px;
+    padding: 40px 0 20px 0;
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    border-radius: 7px;
 }
-.individual-album-container {
-    background-color: green;
-    /* height: 100px; */
-    /* width: 50px; */
+.album-container {
+    display: flex;
+    flex-direction: column;
+    padding-left: 90px;
+    padding-top: 40px;
 }
 .album-image-container {
     width: 200px;        
-        /* border: 5px solid black; */
+        border-radius:7px;
+
 }
 .album-image-container.large {
     height: 300px;
@@ -259,9 +231,8 @@ h2 {
     max-width: 100%;
     max-height: 100%;
     display: block; /* remove extra space below image */
-}
-.album-container p {
-
+    border-radius: 7px;
+    border: 5px solid white;
 }
 
 /* Who we are section starts here */
@@ -270,21 +241,16 @@ h2 {
 }
 .who-we-are-subcontainer {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 .person-container {
     text-align: center;    
 }
-.person-image-container {
-    /* background-color: green; */
-}
+
 .person-image-container img{
     height: 300px;
-    /* border-radius: 75%; */
+    border-radius: 7px;
     border: 1px solid black;
-
-}
-.person-name-and-title {
 
 }
 
@@ -298,10 +264,7 @@ h2 {
     justify-content: space-between;
 
 }
-/* .first-last-name-container {
-    display: flex;
-    flex-direction: row;
-} */
+
 
 /* Form section starts here>>>>>>>>>>>>>>> */
 
@@ -312,9 +275,8 @@ h2 {
     padding: 20px 0 20px 45px;
     color: black;
     width: 600px;
-    /* padding-left: 40px; */
-
   }
+
   input[type=text], select, textarea {
     width: 90%;
     padding: 12px;
@@ -322,10 +284,9 @@ h2 {
     border-radius: 4px;
     resize: vertical;
     margin-left: 45px;
-
+    font-family: 'Poppins', sans-serif;    
   }
   label {
-    /* background-color: lawngreen; */
     padding: 5px 5px 5px 0;
     display: inline-block;
     width: 200px;
@@ -346,7 +307,6 @@ h2 {
     background-color: #45a049;
   }
  
-  
   .col-25 {
     float: left;
     width: 25%;
@@ -391,12 +351,13 @@ iframe {
 }
 /* footer starts here */
 footer {
-    background-color: #3076b4;
+    background-color: black;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 0 50px;
+    color: rgb(165, 163, 163);
     
 }
 footer a {
@@ -405,79 +366,28 @@ footer a {
 }
 
 
-/* *****PICTURE GALLERIES PAGE SECTION  STARTS HERE****** */
-/* Galleries and Events navbar section */
-.home-container {
-    /* background: #222; */
-    /* border-bottom: 2px solid #555; */
-    /* border-top: 2px solid #555; */
-    margin-top: 30px;
-    padding: 40px 0;
+/* ****EVENTS PAGE SECTION STATS HERE */
+body.event-page {
+    background-color: white;
 }
-.home {
-     margin-left: 150px;
-    border: 2px solid black;
-    /* padding: 30px;
-    background-color: gold;
-    border-radius: 50%;   */
-
-    background:gold;
-    height: 60px;
-    text-align: center;
-    transform:rotate(45deg);
-    width:60px;
+.body-content-container {
+    display: flex;
 }
-.home b {
-    color: #333;
-    display: table-cell;
-    height: 60px;
-    transform: rotate(-45deg);
-    vertical-align: middle;
-    width:60px;
-}
-/* Gallaries and Events Navbar section ends here */
-/* Gallery section continued vvv */
-.gallery-images {
-    display: flex; 
-    /* justify-content: space-around; */
-    flex-wrap: wrap;
-    align-items: center;
-}
-.gallery-images img {
-    background-color: hotpink;
-    width: 300px;
-    margin:20px;
-    padding:5px;
-}
-
-
-
-
-
-
-
-
-/* *****EVENTS PAGE SECTION  STARTS HERE****** */
-.page-title-container {
-    margin-top: 150px;
-}
-.page-events-subcontainer {
+.home-button-container {
+    background-color: goldenrod;
+    padding: 0 5px;
+    border-radius: 4px;
     
 }
-.events-page-main-heading {
-    padding-bottom: 20px;
+.home-button-container a {
+    color: black;
 }
-.event-page-heading {
-    text-align: left;
+.events-page-img-container {
+    margin-top: 80px;
 }
-/* Slick Slider Section starts here */
-
-
-
-
-
-
-
+.events-page-h3-container {
+    margin-top: 250px;
+}
 
 /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
 @media screen and (max-width: 600px) {
