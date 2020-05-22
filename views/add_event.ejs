@@ -1,0 +1,44 @@
+<div class="events-page-h3-container">
+    <h3>
+        <!-- Our events list is being updated and will be posted soon! -->
+        ¡Nuestra lista de eventos se está actualizando y se publicará pronto!
+    </h3>
+</div> 
+
+
+<div class="events-page-h3-container">
+    
+        <% all_events.forEach( (single_event) => { %>
+            <h3>
+                <%= single_event.event_name %>
+            </h3> 
+            Date: <%= single_event.event_date %> 
+            <br>   
+            Time: <%= single_event.event_time %>
+            <br>   
+            Location: <%= single_event.event_location %>          
+            <br>
+            
+       <% }) %>
+       
+</div> 
+<br>
+<br>
+
+<form action="" method="POST">
+    <label for="eventName">Event Name: </label>
+    <input type="text" id="eventName" name="eventName">
+    <br>
+    <br>
+    <label for="eventDate">Event Date: </label>
+    <input type="text" id="eventDate" name="eventDate">
+    <br>
+    <br>
+    <label for="eventTime">Event Time: </label>
+    <input type="text" id="eventTime" name="eventTime">
+    <br>
+    <br>
+    <label for="eventLocation">Event Location: </label>
+    <input type="text" id="eventLocation" name="eventLocation">
+    <button class="submit-button" id="addEventButton">Add</button>
+</form>

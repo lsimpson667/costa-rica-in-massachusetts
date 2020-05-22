@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="form-container"><!-- Form Container Starts Here -->
+        <form action="/add" method="POST">
+            <div class="row">
+                <p class="instructions">
+                    <!-- To reach us, Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor  -->
+                    Para contactarnos, por favor complete su información abajo.
+                </p>
+            </div>
+            <div class="first-last-name-container">           
+                <div class="row">
+                    <div class="col-25">
+                        <label for="userFirstName">Nombre: </label>
+                    </div>
+                    <div class="col-75">
+                        <input type="text" id="userFirstName" name="userFirstName" placeholder="nombre"><br>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-25">
+                        <label for="userLastName">Apellidos: </label>
+                    </div>
+                    <div class="col-75">
+                        <input type="text" id="userLastName" name="userLastName" placeholder="apellidos"><br>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-25">
+                    <label for="userEmail">Correo Electrónico: </label>
+                </div>
+                <div class="col-75">
+                    <input type="text" id="userEmail" name="userEmail" placeholder="correo electrónico"><br>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-25">
+                    <label for="userPhoneNumber">Número de Teléfono: </label>
+                </div>
+                <div class="col-75">
+                    <input type="text" id="userPhoneNumber" name="userPhoneNumber" size="50" pattern="[0-9]+" placeholder="Número de Teléfono"><br>
+                </div>
+            </div>
+            <div class="address-container">
+                <div class="row">
+                    <div class="col-25">
+                        <label for="userAddress">Dirección Postal:</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="text" id="userAddress" name="userAddress" size="68.9" placeholder="dirección postal"><br>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-25">
+                        <label for="userCity">Ciudad:</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="text" id="userCity" name="userCity" size="10" placeholder="ciudad">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-25">
+                        <label for="userState">
+                            Estado:</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="text" id="userState" name="userState" placeholder="estado" size="5" maxlength="2">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-25">
+                        <label for="userZipcode">Código Postal:</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="text" id="userZipcode" name="userZipcode" placeholder="código postal" size="5" pattern="[0-9]+"><br>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-25">
+                    <label for="HearAboutUs">¿Cómo te enteraste <br>de nosotros?: </label>
+                </div>
+                <div class="col-75">
+                    <textarea type="text" id="HearAboutUs" name="HearAboutUs" rows="2" cols="53" placeholder=""></textarea><br>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-25">
+                    <label for="userComment">Comentarios: </label>
+                </div>
+                <div class="col-75">
+                    <textarea type="text" id="userComment" name="userComment" rows="8" cols="53" placeholder="comentarios"></textarea>
+                </div>
+            </div>
+        
+            <div class="submit-button-container"> <!-- submit BUTTON starts here -->
+                <div class="row">
+                    <button class="submit-button" id="submitButton">Enviar</button>
+                </div>
+            </div> <!-- submit BUTTON ends here -->
+        </form>
+    </div><!-- Form Container Ends Here -->
+
+</body>
+</html>
