@@ -3,25 +3,30 @@ const app = express();
 const bodyParser = require('body-parser');
 const path = require('path');
 const mongodb = require('mongodb');
-const PORT = 9000;
+const dotenv = require('dotenv');
+dotenv.config();
+
+const PORT = process.env.PORT || 9000;
 
 app.set("view engine", "ejs");   
+
 app.use(express.static(path.join(__dirname, 'public'))); 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded( {extended: true} ));
 
 // Declare any constants or variables here for Database
 let db_handler;
-const DB_URL = "mongodb://localhost:27017";
-const DB_NAME ="costarica"
-const USER_COLLECTION = 'users';
-const EVENT_COLLECTION = 'events';
+// const DB_URL = "mongodb://localhost:27017";
+const DB_URL = process.env.DB_URL;
+const DB_NAME = process.env.DB_NAME;
+const USER_COLLECTION = process.env.USER_COLLECTION;
+const EVENT_COLLECTION = process.env.EVENT_COLLECTION;
 
 app.listen(PORT, () => {
     console.log(`Server Started on Port: ${PORT}`);
     // create connection to our database
     mongo_client = mongodb.MongoClient;
-    mongo_client.connect(DB_URL, (err, db_client) => {
+    mongo_client.connect(DB_URL, { useNewUrlParser: true, useUnifiedTopology: true }, (err, db_client) => {
         if(err) {
             console.log("ERROR:" + err);
         } else {
