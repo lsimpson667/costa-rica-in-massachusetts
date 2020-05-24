@@ -16,16 +16,16 @@ app.use(bodyParser.urlencoded( {extended: true} ));
 
 // Declare any constants or variables here for Database
 let db_handler;
-// const DB_URL = "mongodb://localhost:27017";
-const DB_URL = process.env.DB_URL;
-const DB_NAME = process.env.DB_NAME;
-const USER_COLLECTION = process.env.USER_COLLECTION;
-const EVENT_COLLECTION = process.env.EVENT_COLLECTION;
+const DB_URL = "mongodb://localhost:27017";
+// const DB_URL = process.env.DB_URL;
+const DB_NAME = "costaricaProjectDB";
+const USER_COLLECTION = "users";
+const EVENT_COLLECTION = "events";
 
 app.listen(PORT, () => {
     console.log(`Server Started on Port: ${PORT}`);
     // create connection to our database
-    mongo_client = mongodb.MongoClient;
+    let mongo_client = mongodb.MongoClient;
     mongo_client.connect(DB_URL, { useNewUrlParser: true, useUnifiedTopology: true }, (err, db_client) => {
         if(err) {
             console.log("ERROR:" + err);
@@ -54,8 +54,12 @@ app.get('/events', (request, response) => {
     });
 });
 
+app.get('/user_entries', (req, res) => {
 
+    res.render('user_entries')
+});
 
+//  I don't think this should be a post
 app.post('/add', (req, res) => {
     // Do something here with your request body
     const form_data = req.body;
@@ -75,7 +79,7 @@ app.post('/add', (req, res) => {
     const user_obj = {
         userFirstName: userFirstName,
         userLastName: userLastName,
-        userPhoneNumber: userPhoneNumber,
+        userEmail: userEmail,
         userPhoneNumber: userPhoneNumber,
         userAddress: userAddress,
         userCity: userCity,
@@ -86,7 +90,7 @@ app.post('/add', (req, res) => {
     }
     console.log(user_obj);
 
-    db_handler.collection(USER_COLLECTIONS).insertOne(user_obj, (error, result) => {
+    db_handler.collection(USER_COLLECTION).insertOne(user_obj, (error, result) => {
         if (error) {
             console.log(error);
         }else {
@@ -98,15 +102,16 @@ app.post('/add', (req, res) => {
     })
 });
 
-// ADMIN ROUTES>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
+// ADMIN ROUTES>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+// This route shows 3 links ADD EEVENT, UPDATE EVENT, and DELEDT EVENT
 app.get('/admin', (request, response) => { 
     
     response.render('admin', { 
         
     });
 });
-
+// This route gets to the form for add an event + other events below it
 app.get('/admin/add_event', (request, response) => { 
     
     db_handler.collection(EVENT_COLLECTION).find({}).toArray( (err, result)=> {
@@ -117,14 +122,14 @@ app.get('/admin/add_event', (request, response) => {
             // console.log(result);
             // render it to show the page with specified info on it. (IT IS NOT A ROUTE!)
             response.render('add_event', {
-            'all_events': result 
+            'all_events': result
         });
         }
     });
 });
 
-
-app.post('/admin/add_event', (request, response) => { 
+// This link posts new events below the addd event form 
+app.post('/add_event', (request, response) => { 
     const form_data = request.body;
     console.log(request.body);
 
@@ -153,19 +158,39 @@ app.post('/admin/add_event', (request, response) => {
     })
 });
 
-// // admin route
-// app.get('/admin/:update_event', (request, response) => { 
-//     const parameters = req.params;
-//     const update_event = parameters['update_event']; // render it to show the page with specified info on it. (IT IS NOT A ROUTE!)
+// This route shows an individual event with the option of updating or deleting it (once the form is submitted eventually want it to post events to the events.ejs as well)
+app.get('/admin/:event_name', (req, res) => { 
+    const parameters = req.params;
+    const event_name = parameters['event_name']; // render it to show the page with specified info on it. (IT IS NOT A ROUTE!)
 
-//     db_handler.collection(EVENT_COLLECTION).find({update_event: update_event}).toArray( (err, result) => {
-//         if (err) {
-//             res.send("Company not found");
-//             console.log(err);
-//         }
-//         else {
-//         res.render('company', {
-//             'single_company': result[0]
-//         });
-//         }
-//     });
+    db_handler.collection(EVENT_COLLECTION).find({event_name: event_name}).toArray( (err, result) => {
+        if (err) {
+            res.send("EVENT NOT FOUND!");
+            console.log(err);
+        }
+        else {
+        res.render('event_name', {
+            'single_event': result[0]
+            });
+        }
+    });
+});
+// This route should allow the admin to update the event
+app.get('/update_event/:event_name', (req, res) => {
+    const parameters = req.params;
+    const event_name = parameters['event_name']; 
+
+    // const new_values = {$set: {hiring: "yes"}};
+    db_handler.collection(EVENT_COLLECTION).updateOne({event_name: event_name}, new_values, (err, result) => {
+        if (err) {
+            res.send("Could not update the event");
+            console.log(err);
+        }
+        else{
+            console.log("Event Updated");
+            res.redirect('/view/' + event_name);
+            
+        }
+    });
+});
+

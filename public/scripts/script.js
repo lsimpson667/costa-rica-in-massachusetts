@@ -3,8 +3,8 @@ $(document).ready(() => {
     $(".photo-albums-subcontainer").slick( {
         dots: true,
         autoplay: true,
-        autoplaySpeed: 1950,
-  slidesToShow: 5,
+        autoplaySpeed: 2000,
+  slidesToShow: 4,
   slidesToScroll: 1,
   responsive: [
     {

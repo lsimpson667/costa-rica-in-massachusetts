@@ -1,31 +1,5 @@
-<div class="events-page-h3-container">
-    <h3>
-        <!-- Our events list is being updated and will be posted soon! -->
-        ¡Nuestra lista de eventos se está actualizando y se publicará pronto!
-    </h3>
-</div> 
-
-
-<div class="events-page-h3-container">
-    
-        <% all_events.forEach( (single_event) => { %>
-            <h3>
-                <%= single_event.event_name %>
-            </h3> 
-            Date: <%= single_event.event_date %> 
-            <br>   
-            Time: <%= single_event.event_time %>
-            <br>   
-            Location: <%= single_event.event_location %>          
-            <br>
-            
-       <% }) %>
-       
-</div> 
-<br>
-<br>
-
-<form action="" method="POST">
+To A an event, fill out the form and press submit.
+<form action="/add_event" method="POST">
     <label for="eventName">Event Name: </label>
     <input type="text" id="eventName" name="eventName">
     <br>
@@ -42,3 +16,19 @@
     <input type="text" id="eventLocation" name="eventLocation">
     <button class="submit-button" id="addEventButton">Add</button>
 </form>
+
+<p>To see the UPDATE and DELETE event options, click on one of the listed events.</p>
+
+<h3>Event List</h3>
+<div class="events-page-h3-container">
+    
+        <% all_events.forEach( (single_event) => { %>
+            <h4>
+                <%= single_event.event_name %>
+            </h4>   
+        <% }) %>
+       
+</div> 
+<br>
+<br>
+

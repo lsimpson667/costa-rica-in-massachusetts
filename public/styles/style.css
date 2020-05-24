@@ -240,7 +240,7 @@ iframe {
     border: 5px solid white;
 }
 .photo-albums-container {
-    background-color: tan;
+    /* background-color: tan; */
     color: white;
     display: flex;
     flex-direction: column;
@@ -248,7 +248,7 @@ iframe {
     align-items: center;
 }
 .photo-albums-subcontainer {
-    background-color: green;
+    /* background-color: green; */
     color: white;
     width: 1400px;
     padding: 40px 0 20px 0;
@@ -257,7 +257,7 @@ iframe {
     border-radius: 7px;
 }
 .album-container {
-    background-color: red;
+    /* background-color: red; */
     display: flex;
     flex-direction: column;
     width: 400px;
@@ -265,7 +265,7 @@ iframe {
     padding-top: 40px;
 }
 .album-image-container {
-    background-color: plum;
+    /* background-color: plum; */
     width: 250px;        
         border-radius:7px;
 
