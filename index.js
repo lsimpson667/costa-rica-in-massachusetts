@@ -54,10 +54,10 @@ app.get('/events', (request, response) => {
     });
 });
 
-// ROUTE FOR USER ENTRIES*(has not been made yet)
+app.get('/user_entries', (req, res) => {
 
-
-
+    res.render('user_entries')
+});
 
 //  I don't think this should be a post
 app.post('/add', (req, res) => {
@@ -103,22 +103,15 @@ app.post('/add', (req, res) => {
 });
 
 
-// ADMIN ROUTES START HERE>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-// This route shows 4 links ADD EEVENT, UPDATE EVENT, DELEDT EVENT, and SEE USER ENTRIES
+// ADMIN ROUTES>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+// This route shows 3 links ADD EEVENT, UPDATE EVENT, and DELEDT EVENT
 app.get('/admin', (request, response) => { 
     
     response.render('admin', { 
         
     });
 });
-
-// This route goes into the user entries link and shows a link to ATLAS? where all user entries can be seen?
-app.get('/admin/user_entries', (req, res) => {
-
-    res.render('user_entries')
-});
-
-// This route gets to the form for adding an event + event list below it
+// This route gets to the form for add an event + other events below it
 app.get('/admin/add_event', (request, response) => { 
     
     db_handler.collection(EVENT_COLLECTION).find({}).toArray( (err, result)=> {
@@ -135,7 +128,7 @@ app.get('/admin/add_event', (request, response) => {
     });
 });
 
-// This link posts new events in several places (below the addd event form, on events.ejs page, and update event page)
+// This link posts new events below the addd event form 
 app.post('/add_event', (request, response) => { 
     const form_data = request.body;
     console.log(request.body);
@@ -164,53 +157,40 @@ app.post('/add_event', (request, response) => {
         }
     })
 });
-// This route shows a list of events that can be updated or deleted
-app.get('/admin/update_event', (req, res) => { 
 
-    db_handler.collection(EVENT_COLLECTION).find({}).toArray( (err, result) => {
-        if (err) {
-            res.send("");
-            console.log(err);
-        }
-        else {
-        res.render('event_name', {
-            'all_events': result
-            });
-        }
-    });
-});
 // This route shows an individual event with the option of updating or deleting it (once the form is submitted eventually want it to post events to the events.ejs as well)
-app.get('/admin/update_event/:event_id', (req, res) => {
+app.get('/admin/:event_name', (req, res) => { 
     const parameters = req.params;
-    // converted into an object Id for mongo db compass
-    const event_id = mongodb.ObjectId(parameters['event_id']); 
+    const event_name = parameters['event_name']; // render it to show the page with specified info on it. (IT IS NOT A ROUTE!)
 
-    db_handler.collection(EVENT_COLLECTION).find({_id: event_id}).toArray( (err, result) => {
+    db_handler.collection(EVENT_COLLECTION).find({event_name: event_name}).toArray( (err, result) => {
         if (err) {
             res.send("EVENT NOT FOUND!");
             console.log(err);
         }
-        else{
-            res.render('indv_event', {
-                event: result[0]
+        else {
+        res.render('event_name', {
+            'single_event': result[0]
             });
         }
     });
 });
-// This route will delete the event and redirect to the page with the list of events
-app.get('/admin/update_event/delete/:event_name', (req, res) => {
+// This route should allow the admin to update the event
+app.get('/update_event/:event_name', (req, res) => {
     const parameters = req.params;
-    // converted into an object Id for mongo db compass
     const event_name = parameters['event_name']; 
-    db_handler.collection(EVENT_COLLECTION).deleteOne({ event_name: event_name }, (err, result) => {
+
+    // const new_values = {$set: {hiring: "yes"}};
+    db_handler.collection(EVENT_COLLECTION).updateOne({event_name: event_name}, new_values, (err, result) => {
         if (err) {
-            res.send("Could not delete the event");
+            res.send("Could not update the event");
             console.log(err);
         }
-        else {
-            console.log(result);
-            res.redirect('/admin/update_event');
+        else{
+            console.log("Event Updated");
+            res.redirect('/view/' + event_name);
+            
         }
-
     });
 });
+

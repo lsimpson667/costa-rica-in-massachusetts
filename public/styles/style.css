@@ -170,7 +170,6 @@ h2 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 620px;
 }
 .user-instructions {
  margin-bottom: 50px;
@@ -236,15 +235,12 @@ h2 {
 .featured-videos {
     text-align:center;
 }
-.featured-videos img {
-    /* height: 600px; */
-    /* margin-top: 200px; */
-}
 iframe {
     border-radius: 7px;
     border: 5px solid white;
 }
 .photo-albums-container {
+    /* background-color: tan; */
     color: white;
     display: flex;
     flex-direction: column;
@@ -252,18 +248,18 @@ iframe {
     align-items: center;
 }
 .photo-albums-subcontainer {
+    /* background-color: green; */
     color: white;
     width: 1400px;
-    padding: 40px 0 20px 30px;
+    padding: 40px 0 20px 0;
     display: flex;
     align-items: center;
-    justify-content: center;
     border-radius: 7px;
 }
 .album-container {
+    /* background-color: red; */
     display: flex;
     flex-direction: column;
-    justify-content: center;
     width: 400px;
     padding-left: 10px;
     padding-top: 40px;
@@ -407,22 +403,17 @@ iframe {
 }
 /* footer starts here */
 footer {
-    background-color: goldenrod;
+    background-color: black;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 0 50px;
-    color: rgb(48, 48, 95);
-    /* height: 700px; */
+    color: rgb(165, 163, 163);
     
 }
-
-.footer-logo {
-    padding-left: 400px;
-}
-.footer-logo img{
-width: 700px;
+footer a {
+    color: white;
 }
 
 /* ****EVENTS PAGE SECTION STATS HERE */
