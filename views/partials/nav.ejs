@@ -1,0 +1,31 @@
+<nav id="navbarMainPage" class="navbar-container"> <!-- Navbar starts here -->
+    <div class="logo-container">
+        <img src="./images/logoFinal.png" alt="logo" style="width: 85px;">
+    </div>
+    <div class="translator-container">
+<!-- GTRANSLATE -->
+        <div class="usa-icon-container">
+            <a href="#" onclick="doGTranslate('es|en');return false;" title="English" class="nturl" style="background-position:-0px -0px;"><img src="./images/TranslatorIcons/usaCircle128.png" height="32" width="32" alt="English" /></a>
+        </div>
+        <div class="spain-icon-container">    
+            <a href="#" onclick="doGTranslate('es|es');return false;" title="Spanish" class="nturl" style="background-position:-600px -200px;"><img src="./images/TranslatorIcons/spainCircle128.png" height="32" width="32" alt="Spanish" /></a>
+        </div>
+        <div class="select-language-container">
+            <select onchange="doGTranslate(this);" class="translator-select"><option value="">Select Language</option><option value="es|en">English</option><option value="es|es">Spanish</option></select><div id="google_translate_element2"></div>
+        </div>
+<!-- GTRANSLATE -->
+    </div>
+    <div class="home-button-container">
+        <a href="/" class="tab-button"><b>HOME</b></a>
+    </div>
+    <div class="tabs-container">
+        <a href="#missionHeadingContainer" class="tab-button"><b>Misión y Valores</b></a>
+        <a href="#eventsHeadingContainer" class="tab-button"><b>Eventos</b></a>
+        <a href="#galleryHeadingContainer" class="tab-button"><b>Galeria</b></a>
+        <a href="#whoWeAreHeadingContainer" class="tab-button"><b>Quienes somos</b></a>
+        <a href="#contactsHeadingContainer" class="tab-button"><b>Contactonos</b></a>
+    </div>
+    <div class="icon-container">
+        <a href="https://www.facebook.com/costaricamass/" target="_blank"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
+    </div>
+</nav> <!-- Navbar ends here -->
