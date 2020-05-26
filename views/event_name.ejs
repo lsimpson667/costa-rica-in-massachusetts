@@ -3,24 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Company ID</title>
+    <title>Event Updates</title>
 </head>
 <body>
-    <h3><%= single_event.event_name %></h3>
+    <h3>Click on the company you want to update or delete.</h3>
+    <% all_events.forEach( (single_event) => { %>
+        
+        <a href="/admin/update_event/<%= single_event._id %>"><%= single_event.event_name %></a>
+        
+        <br>
+   <% }) %>
+
+    <h3><%= all_events.event_name %></h3>
     <br>
     <br>
-    <%= single_event.event_date %>
-    <br>
-    <br>
-    <%= single_event.event_time %> 
-    <br>
-    <br>
-    <%= single_event.event_location %>
-    <br>
-    <br>
-    <a href="/updateCompany/<%= single_company.company_id %>">Company is Hiring</a>
-    <br>
-    <br>
-    <a href="/delete/<%= single_company.company_id %>">Delete Company</a>
 </body>
 </html>

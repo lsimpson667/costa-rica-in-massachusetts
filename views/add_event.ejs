@@ -1,4 +1,5 @@
-To A an event, fill out the form and press submit.
+<p>To Add an event, fill out the form and press submit.</p>
+<br>
 <form action="/add_event" method="POST">
     <label for="eventName">Event Name: </label>
     <input type="text" id="eventName" name="eventName">
@@ -14,18 +15,21 @@ To A an event, fill out the form and press submit.
     <br>
     <label for="eventLocation">Event Location: </label>
     <input type="text" id="eventLocation" name="eventLocation">
-    <button class="submit-button" id="addEventButton">Add</button>
+    <br>
+    <br>
+    <button class="submit-button" id="addEventButton">Submit</button>
 </form>
+<br>
+<br>
 
-<p>To see the UPDATE and DELETE event options, click on one of the listed events.</p>
 
-<h3>Event List</h3>
+<h2>Event List:</h2>
 <div class="events-page-h3-container">
     
         <% all_events.forEach( (single_event) => { %>
-            <h4>
-                <%= single_event.event_name %>
-            </h4>   
+            <p>
+                <a href="<%= single_event.event_name %>"><%= single_event.event_name %></a>
+            </p>   
         <% }) %>
        
 </div> 
