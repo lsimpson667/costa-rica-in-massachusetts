@@ -160,7 +160,7 @@ a { color: white; text-decoration: none; }
    text-align: center;
 }
 
-h2 {
+h2.header {
     text-align: center;
 }
 
@@ -293,11 +293,12 @@ iframe {
 
 /* Who we are section starts here */
 .who-we-are-container {
-    padding: 70px 0;
+    padding: 10px 0 120px 0;
 }
 .who-we-are-subcontainer {
     display: flex;
     justify-content: space-around;
+    padding-top: 40px;
 }
 .person-container {
     text-align: center;    
@@ -310,7 +311,6 @@ iframe {
 
 }
 
-
 /* Contacts section starts here */
 .contacts-container {
     padding: 0 20px 100px 20px;
@@ -318,6 +318,7 @@ iframe {
 .contacts-subcontainer {
     display: flex;
     justify-content: space-between;
+    padding-top: 40px;
 
 }
 
@@ -409,17 +410,28 @@ iframe {
 footer {
     background-color: goldenrod;
     display: flex;
-    flex-direction: column;
+    /* flex-direction: column; */
     justify-content: center;
     align-items: center;
     padding: 0 50px;
-    color: rgb(48, 48, 95);
+    color: black;
     /* height: 700px; */
-    
 }
-
+.footer-left-container {
+width: 40vw;
+border-right: 1px solid black;
+height: 600px;
+/* text-align: center; */
+padding-top: 90px;
+}
+.icon-container {
+    padding-left: 100px;
+}
+.footer-right-container {
+    padding-left: 100px;
+}
 .footer-logo {
-    padding-left: 400px;
+    padding-left: 100px;
 }
 .footer-logo img{
 width: 700px;

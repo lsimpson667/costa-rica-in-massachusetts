@@ -54,11 +54,7 @@ app.get('/events', (request, response) => {
     });
 });
 
-// ROUTE FOR USER ENTRIES*(has not been made yet)
-
-
-
-
+// ROUTE FOR USER ENTRIES STARTS HERE >>>>>>>>>>>>>>>>>>>>>>>>>>>>
 //  I don't think this should be a post
 app.post('/add', (req, res) => {
     // Do something here with your request body
@@ -68,7 +64,7 @@ app.post('/add', (req, res) => {
     const userFirstName = form_data['userFirstName'];
     const userLastName = form_data['userLastName'];
     const userEmail = form_data['userEmail'];
-    const userPhoneNumber = parseInt(form_data['userPhoneNumber']);
+    const userPhoneNumber = form_data['userPhoneNumber'];
     const userAddress = form_data['userAddress'];
     const userCity = form_data['userCity'];
     const userState = form_data['userState'];
@@ -97,7 +93,10 @@ app.post('/add', (req, res) => {
             console.log("A USER ENTRY HAS BEEN ADDED");
             // send response to browser once we are done with db
             // redirect sends client to a specified route.
+            
+            // redirect me to this path
             res.redirect('/#submit-container');
+
         }
     })
 });
@@ -114,9 +113,19 @@ app.get('/admin', (request, response) => {
 
 // This route goes into the user entries link and shows a link to ATLAS? where all user entries can be seen?
 app.get('/admin/user_entries', (req, res) => {
-
-    res.render('user_entries')
+    db_handler.collection(USER_COLLECTION).find({}).toArray( (error, result) => {
+        if (error) {
+            console.log(error);
+        }else {
+            console.log("");
+        // render this .ejs file
+            res.render('user_entries', {
+            all_users: result
+            })
+        }
+    });
 });
+
 
 // This route gets to the form for adding an event + event list below it
 app.get('/admin/add_event', (request, response) => { 
@@ -197,12 +206,40 @@ app.get('/admin/update_event/:event_id', (req, res) => {
         }
     });
 });
-// This route will delete the event and redirect to the page with the list of events
-app.get('/admin/update_event/delete/:event_name', (req, res) => {
+
+// This route UPDATES an event and then redirects to the same page.
+app.post('/update_event/:event_id', (req, res)  => {
     const parameters = req.params;
-    // converted into an object Id for mongo db compass
-    const event_name = parameters['event_name']; 
-    db_handler.collection(EVENT_COLLECTION).deleteOne({ event_name: event_name }, (err, result) => {
+    const event_id = mongodb.ObjectId(parameters['event_id']); 
+
+    const form_data = req.body;
+    console.log(req.body);
+
+    const event_name = form_data['eventName'];
+    const event_date = form_data['eventDate'];
+    const event_time = form_data['eventTime'];
+    const event_location = form_data['eventLocation'];
+
+    const new_values = {$set: {event_name: event_name, event_date: event_date, event_time: event_time, event_location: event_location}};
+
+    db_handler.collection(EVENT_COLLECTION).updateOne({_id: event_id}, new_values, (err, result) => {
+        if (err) {
+            res.send("Could not update the event");
+            console.log(err);
+        } else {
+            console.log(result);
+        
+        res.redirect('/admin/update_event/' + event_id);
+        }
+    });
+});
+
+// This route will delete the event and redirect to the page with the list of events
+app.get('/update_event/delete/:event_id', (req, res) => {
+    const parameters = req.params;
+    const event_id = mongodb.ObjectId(parameters['event_id']); 
+
+    db_handler.collection(EVENT_COLLECTION).deleteOne({_id: event_id}, (err, result) => {
         if (err) {
             res.send("Could not delete the event");
             console.log(err);
@@ -211,6 +248,6 @@ app.get('/admin/update_event/delete/:event_name', (req, res) => {
             console.log(result);
             res.redirect('/admin/update_event');
         }
-
     });
 });
+// for the events page>>>>>>>>>>>>>>>

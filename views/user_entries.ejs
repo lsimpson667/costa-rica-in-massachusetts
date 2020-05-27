@@ -7,33 +7,38 @@
 </head>
 <body>
     <h3>USER ENTRIES</h3>
-    <h4><%= single_user.userFirstName %></h4>
-    <br>
-    <br>
-    <%= single_user.userLastName %>
-    <br>
-    <br>
-    <%= single_user.userEmail %> 
-    <br>
-    <br>
-    <%= single_event.userPhoneNumber %>
-    <br>
-    <br>
-    <%= single_event.userAddress %>
-    <br>
-    <br>
-    <%= single_event.userCity %>
-    <br>
-    <br>
-    <%= single_event.userState %>
-    <br>
-    <br>
-    <%= single_event.userZipcode %>
-    <br>
-    <br>
-    <%= single_event.HearAboutUs %>
-    <br>
-    <br>
-    <%= single_event.userComment %>
+    <% all_users.forEach( (single_user) => { %>
+     
+        <h4><%= single_user.userFirstName %></h4>
+        <br>
+        <br>
+        <%= single_user.userLastName %>
+        <br>
+        <br>
+        <%= single_user.userEmail %> 
+        <br>
+        <br>
+        <%= single_user.userPhoneNumber %>
+        <br>
+        <br>
+        <%= single_user.userAddress %>
+        <br>
+        <br>
+        <%= single_user.userCity %>
+        <br>
+        <br>
+        <%= single_user.userState %>
+        <br>
+        <br>
+        <%= single_user.userZipcode %>
+        <br>
+        <br>
+        <%= single_user.HearAboutUs %>
+        <br>
+        <br>
+        <%= single_user.userComment %>
+        <% }) %>
+
+    
 </body>
 </html>
