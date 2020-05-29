@@ -111,7 +111,7 @@ app.get('/admin', (request, response) => {
     });
 });
 
-// This route goes into the user entries link and shows a link to ATLAS? where all user entries can be seen?
+// This route goes shows all user entries in the link "see user entries" 
 app.get('/admin/user_entries', (req, res) => {
     db_handler.collection(USER_COLLECTION).find({}).toArray( (error, result) => {
         if (error) {
@@ -251,3 +251,36 @@ app.get('/update_event/delete/:event_id', (req, res) => {
     });
 });
 // for the events page>>>>>>>>>>>>>>>
+// This route shows all events on the events.ejs page
+
+app.get('/events', (req, res) => {
+    db_handler.collection(EVENT_COLLECTION).find({}).toArray( (err, result) => {
+        if (err) {
+
+            console.log(err);
+        }
+        else {
+            console.log(result);
+        res.render('events', {
+            'all_events': result
+            });
+        }
+    });
+
+    // db_handler.collection(EVENT_COLLECTION).find({}).toArray( (error, result) => {
+    //     if (error) {
+    //         console.log(error);
+    //     }else {
+    //         console.log(result);
+    //     // render this .ejs file
+    //         res.render('events', {
+    //         'all_events': result
+    //         })
+    //     }
+    // });
+});
+
+// for search bar>>>>>>>>>>>>>>>>>
+app.post('', (req, res) => {
+
+});

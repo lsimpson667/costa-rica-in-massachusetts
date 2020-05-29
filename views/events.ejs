@@ -10,6 +10,18 @@
                 <!-- Our events list is being updated and will be posted soon! -->
                 ¡Nuestra lista de eventos se está actualizando y se publicará pronto!
             </h3>
+            
+            <div>
+                <% all_events.forEach( (single_event) => { %>
+                    <h4>
+                        <%= single_event.event_name %>
+                    </h4> 
+                    
+                <% }) %>
+        
+            </div>
+
+
         </div> 
     </div>     
     <!-- **** -->
