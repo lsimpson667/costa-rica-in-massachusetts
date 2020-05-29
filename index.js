@@ -47,13 +47,6 @@ app.get('/', (request, response) => {
     });
 });
 
-app.get('/events', (request, response) => { 
-    
-    response.render('events', { 
-        
-    });
-});
-
 // ROUTE FOR USER ENTRIES STARTS HERE >>>>>>>>>>>>>>>>>>>>>>>>>>>>
 //  I don't think this should be a post
 app.post('/add', (req, res) => {
