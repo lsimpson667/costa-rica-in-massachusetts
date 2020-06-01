@@ -69,7 +69,7 @@ select.translator-select  {
     text-decoration: none;
     color: white;    
 }
-.icon-container {
+.icon-nav-container {
     width: 50px;
     margin: 0 40px 0 0;
 }
@@ -147,7 +147,15 @@ a { color: white; text-decoration: none; }
 .main-subcontainer {
     color:white;
 }
+
 /* Mision and values section start here */
+hr#beginningOfSection1 {
+    padding-bottom: 50px;
+    margin: 0;
+    width: 99.9%;
+    background-color: goldenrod;
+    border: 1px solid goldenrod;
+}
 .heading-container {
     padding: 10px 0 30px 0;
 }
@@ -165,6 +173,12 @@ h2.header {
 }
 
 /* Events start section Here */
+hr#beginningOfSection2 {
+    padding-bottom: 50px;
+    margin: 0;
+    border-top: 1px solid rgb(48, 48, 95);
+
+}
 .events-container {
     padding: 0 0 50px 0;
     display: flex;
@@ -233,13 +247,14 @@ h2.header {
 }
 
 /* Gallery section starts here */
+hr#beginningOfSection3 {
+    padding-bottom: 50px;
+    margin: 0;
+}
 .featured-videos {
     text-align:center;
 }
-.featured-videos img {
-    /* height: 600px; */
-    /* margin-top: 200px; */
-}
+
 iframe {
     border-radius: 7px;
     border: 5px solid white;
@@ -250,6 +265,7 @@ iframe {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding-bottom: 50px;
 }
 .photo-albums-subcontainer {
     color: white;
@@ -263,10 +279,12 @@ iframe {
 .album-container {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    /* justify-content: center; */
     width: 400px;
     padding-left: 10px;
     padding-top: 40px;
+    /* text-align: center; */
+    
 }
 .album-image-container {
     /* background-color: plum; */
@@ -292,6 +310,10 @@ iframe {
 }
 
 /* Who we are section starts here */
+hr#beginningOfSection4 {
+    padding-bottom: 50px;
+    margin: 0;
+}
 .who-we-are-container {
     padding: 10px 0 120px 0;
 }
@@ -312,6 +334,10 @@ iframe {
 }
 
 /* Contacts section starts here */
+hr#beginningOfSection5 {
+    padding-bottom: 50px;
+    margin: 0;
+}
 .contacts-container {
     padding: 0 20px 100px 20px;
 }
@@ -423,10 +449,18 @@ border-right: 1px solid black;
 height: 600px;
 /* text-align: center; */
 padding-top: 90px;
+
 }
-.icon-container {
-    padding-left: 100px;
+.footer-facebook-promo {
+    background-color: lightskyblue;
+    width: 150px;
+    border-radius: 7px;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
 }
+
 .footer-right-container {
     padding-left: 100px;
 }
