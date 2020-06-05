@@ -19,6 +19,9 @@
     <%= event.event_location %>
     <br>
     <br>
+    <%= event.event_additionalInfo %>
+    <br>
+    <br>
     <br>
     <hr>
 
@@ -43,6 +46,11 @@
         <input type="text" id="eventLocation" name="eventLocation" value="<%= event.event_location %>">
         <br>
         <br>
+        <label for="additionalInfo">Additional Information: </label>
+        <input type="text" id="additionalInfo" name="additionalInfo" value="<%= event.event_additionalInfo %>">
+        <br>
+        <br>
+
         <button class="submit-button" id="addEventButton">Submit</button>
     
     </form>

@@ -6,37 +6,41 @@
     <title>User Entries</title>
 </head>
 <body>
-    <h3>USER ENTRIES</h3>
+    <h2>USER ENTRIES</h2>
     <% all_users.forEach( (single_user) => { %>
+    <br>
      
-        <h4><%= single_user.userFirstName %></h4>
+        <b>First Name: </b><%= single_user.userFirstName %>
         <br>
         <br>
-        <%= single_user.userLastName %>
+        <b>Last Name: </b><%= single_user.userLastName %>
         <br>
         <br>
-        <%= single_user.userEmail %> 
+        <b>Email: </b><%= single_user.userEmail %> 
         <br>
         <br>
-        <%= single_user.userPhoneNumber %>
+        <b>Phone: </b><%= single_user.userPhoneNumber %>
         <br>
         <br>
-        <%= single_user.userAddress %>
+        <b>Street Address: </b><%= single_user.userAddress %>
         <br>
         <br>
-        <%= single_user.userCity %>
+        <b>City: </b><%= single_user.userCity %>
         <br>
         <br>
-        <%= single_user.userState %>
+        <b>State: </b><%= single_user.userState %>
         <br>
         <br>
-        <%= single_user.userZipcode %>
+        <b>Zip Code: </b><%= single_user.userZipcode %>
         <br>
         <br>
-        <%= single_user.HearAboutUs %>
+        <b>Reference: </b><%= single_user.HearAboutUs %>
         <br>
         <br>
-        <%= single_user.userComment %>
+        <b>Comment(s): </b><%= single_user.userComment %>
+        <br>
+        <br>
+        <hr>
         <% }) %>
 
     

@@ -1,7 +1,7 @@
 <%- include('partials/head'); -%>
 <%- include('partials/nav'); -%>
 <div class="banner-container"><!-- banner container starts here -->
-
+   
     <div class="banner-heading-container">
         <h1>
             COSTA RICA <br>EN <br>MASSACHUSETTS  
@@ -14,7 +14,8 @@
         <div class="arrow bounce">
             <a class="fa fa-arrow-down fa-2x" href="#"></a>
           </div>
-    </div>    
+    </div>   
+
 </div> <!-- banner container ends here -->  
 
 <div class="main-subcontainer"> <!-- Main subcontainer starts here -->
@@ -112,7 +113,10 @@
     <div class="photo-albums-subcontainer"> <!-- Albums SUBcontainer starts here -->
         <div class="album-container"> <!-- Album1 starts here -->
             <div class="album-image-container">
-                <a href="https://www.dropbox.com/sh/no0cheritseii4w/AABeZF42KpgRzIST3lkqTo4Ua?dl=0" target="_blank" class="album1-image"><img src="./images/Festejo-Tico-2018/41849013-2065446120433245-6886742594689171456-n.jpg"></a>
+                <a href="https://www.dropbox.com/sh/no0cheritseii4w/AABeZF42KpgRzIST3lkqTo4Ua?dl=0" target="_blank" class="album1-image"><img src="./images/Festejo-Tico-2018/41849013-2065446120433245-6886742594689171456-n.jpg" class="album-image"></a>
+                <div class="overlay">
+                    <div class="text">Hello World</div>
+                  </div>
             </div>
             <p>
                 Festejo Tico
@@ -121,7 +125,10 @@
 
         <div class="album-container"> <!-- Album2 starts here -->
             <div class="album-image-container">
-                <a href="https://www.dropbox.com/sh/um15ctnvpgwgysx/AABfQlvpU4eiaHTnRFP6Htsba?dl=0" target="_blank" class="album2-image"><img src="./images/Fiesta-Navidena-2018-StPaul-Episcopalian-Cathedral/48377779-2116368988674291-4494666666625466368-n.jpg"></a>
+                <a href="https://www.dropbox.com/sh/um15ctnvpgwgysx/AABfQlvpU4eiaHTnRFP6Htsba?dl=0" target="_blank" class="album2-image"><img src="./images/Fiesta-Navidena-2018-StPaul-Episcopalian-Cathedral/48377779-2116368988674291-4494666666625466368-n.jpg" class="album-image"></a>
+                <div class="overlay">
+                    <div class="text">Hello World</div>
+                  </div>
             </div>
             <p>
                 Fiesta Navidena
@@ -130,16 +137,22 @@
 
         <div class="album-container"> <!-- Album3 starts here -->
             <div class="album-image-container">
-                <a href="https://www.dropbox.com/sh/ybfwp6rd1jwqvq6/AAARzye0cc5sdjer9F_gsdvYa?dl=0" target="_blank"><img src="./images/Mundial-de-Futbol-2018/35463343-1980978218880036-2504555447894147072-n.jpg"></a>
+                <a href="https://www.dropbox.com/sh/ybfwp6rd1jwqvq6/AAARzye0cc5sdjer9F_gsdvYa?dl=0" target="_blank"><img src="./images/Mundial-de-Futbol-2018/35463343-1980978218880036-2504555447894147072-n.jpg" class="album-image"></a>
+                <div class="overlay">
+                    <div class="text">Hello World</div>
+                  </div>
             </div>
             <p>
-                Mundial de Futbol
+                Copa Mundial de Fútbol
             </p>
         </div> <!-- Album3 ends here -->
 
         <div class="album-container"> <!-- Album4 starts here -->
             <div class="album-image-container">
-                <a href="https://www.dropbox.com/sh/23zmxx4lsysnoa5/AADW8CBnjSJOrAeUamsQL-gca?dl=0" target="_blank"><img src="./images/15-de-Septiembre-de-2017-Centro-America-Independiente-BotonCityHall/21728636-1842140602763799-4143344719299894213-o_2.jpg"></a>
+                <a href="https://www.dropbox.com/sh/23zmxx4lsysnoa5/AADW8CBnjSJOrAeUamsQL-gca?dl=0" target="_blank"><img src="./images/15-de-Septiembre-de-2017-Centro-America-Independiente-BotonCityHall/21728636-1842140602763799-4143344719299894213-o_2.jpg" class="album-image"></a>
+                <div class="overlay">
+                    <div class="text">Hello World</div>
+                  </div>
             </div>
             <p>
                 Centro America Independiente
@@ -148,7 +161,10 @@
 
         <div class="album-container"> <!-- Album5 starts here -->
             <div class="album-image-container">
-                <a href="https://www.dropbox.com/sh/wsjpnjeprc4o9xw/AACwwd2GZHHPvHTBmxARCvGea?dl=0" target="_blank"><img src="./images/Consulado-Mobil-Costa-Rica-en-Boston-2017/img-0004_2.jpg"></a>
+                <a href="https://www.dropbox.com/sh/wsjpnjeprc4o9xw/AACwwd2GZHHPvHTBmxARCvGea?dl=0" target="_blank"><img src="./images/Consulado-Mobil-Costa-Rica-en-Boston-2017/img-0004_2.jpg" class="album-image"></a>
+                <div class="overlay">
+                    <div class="text">Hello World</div>
+                  </div>
             </div>
             <p>
                 Consulado Mobil Costa Rica <br>en Boston
@@ -245,10 +261,10 @@
                         </div>
                         <div class="row">
                             <div class="col-25">
-                                <label for="userLastName">Apellidos: </label>
+                                <label for="userLastName">Apellido: </label>
                             </div>
                             <div class="col-75">
-                                <input type="text" id="userLastName" name="userLastName" placeholder="Apellidos" required><br>
+                                <input type="text" id="userLastName" name="userLastName" placeholder="Apellido" required><br>
                             </div>
                         </div>
                     </div>
@@ -265,7 +281,7 @@
                             <label for="userPhoneNumber">Número de Teléfono: </label>
                         </div>
                         <div class="col-75">
-                            <input type="text" id="userPhoneNumber" name="userPhoneNumber" size="50" pattern="[0-9]+" placeholder="Número De Teléfono" required><br>
+                            <input type="text" id="userPhoneNumber" name="userPhoneNumber" size="50" pattern="[0-9-]+" placeholder="Número De Teléfono" required><br>
                         </div>
                     </div>
                     <div class="address-container">
@@ -290,7 +306,7 @@
                                 <label for="userState">Estado:</label>
                             </div>
                             <div class="col-75">
-                                <input type="text" id="userState" name="userState" placeholder="Estado" size="5" maxlength="2" required>
+                                <input type="text" id="userState" name="userState" placeholder="Estado" size="5" pattern="[A-Za-z]{2}" required>
                             </div>
                         </div>
                         <div class="row">
@@ -298,7 +314,7 @@
                                 <label for="userZipcode">Código Postal:</label>
                             </div>
                             <div class="col-75">
-                                <input type="text" id="userZipcode" name="userZipcode" placeholder="Código Postal" size="5" pattern="[0-9]+" required><br>
+                                <input type="text" id="userZipcode" name="userZipcode" placeholder="Código Postal" size="5" pattern="[0-9-]+" required><br>
                             </div>
                         </div>
                     </div>
@@ -307,7 +323,7 @@
                             <label for="HearAboutUs">¿Cómo te enteraste <br>de nosotros?: </label>
                         </div>
                         <div class="col-75">
-                            <textarea type="text" id="HearAboutUs" name="HearAboutUs" rows="2" cols="53" placeholder="Referencia" required></textarea><br>
+                            <textarea type="text" id="HearAboutUs" name="HearAboutUs" rows="2" cols="53" placeholder="Referencia"></textarea><br>
                         </div>
                     </div>
 
@@ -325,11 +341,20 @@
                             <button type="submit" class="submit-button" id="submitButton">Enviar</button>
                         </div>
                     </div> <!-- submit BUTTON ends here -->
+                    <p id="thankYouMsg">
+                        <% if (thanks == "yes") { %>
+                        Thank you for your comments!
+                        <% } %>
+                    </p>
                 </form>
             </div><!-- Form Container Ends Here -->
         </div> <!-- Contacts left container ends here -->
         <div class="contacts-right-container"> <!-- Contacts right container starts here -->
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2948.5892538742464!2d-71.08083658503972!3d42.351279843649536!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89e37a0bf715687f%3A0xfb454fcbc781334e!2s160%20Commonwealth%20Avenue%20APT%20313%2C%20Boston%2C%20MA%2002116!5e0!3m2!1sen!2sus!4v1587445668026!5m2!1sen!2sus" width="500" height="350" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+            <div>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2948.5892538742464!2d-71.08083658503972!3d42.351279843649536!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89e37a0bf715687f%3A0xfb454fcbc781334e!2s160%20Commonwealth%20Avenue%20APT%20313%2C%20Boston%2C%20MA%2002116!5e0!3m2!1sen!2sus!4v1587445668026!5m2!1sen!2sus" width="500" height="350" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+            </div>
+            
+
         </div> <!-- Contacts right container ends here -->
     </div>    <!-- Contacts  SUBcontainer ends here -->
 </div> <!-- Contacts end here -->

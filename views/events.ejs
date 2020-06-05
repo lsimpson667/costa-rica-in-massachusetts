@@ -2,26 +2,40 @@
 <%- include('partials/nav'); -%>
 <div class="evets-body-color">
     <div class="body-content-container">
-        <div class="events-page-img-container">
+        <!-- UNDER CONSTRUCTION MESSAGE STARTS HERE -->
+        <!-- <div class="events-page-img-container"> 
             <img src="images/bodyBackgrounds/UnderConstruction/under-construction.png">
         </div>
         <div class="events-page-h3-container">
-            <h3>
+            <h3> --> -->
                 <!-- Our events list is being updated and will be posted soon! -->
-                ¡Nuestra lista de eventos se está actualizando y se publicará pronto!
-            </h3>
-            
-            <div>
-                <% all_events.forEach( (single_event) => { %>
-                    <h4>
-                        <%= single_event.event_name %>
-                    </h4> 
-                    
-                <% }) %>
+                <!-- ¡Nuestra lista de eventos se está actualizando y se publicará pronto!
+            </h3> -->
+        <!-- UNDER CONSTRUCTION MESSAGE ENDS HERE -->
         
+        <!-- LIST OF EVEVNTS START HERE -->
+        <div class=event-list>
+            <h1>Event List</h1>
+                <% all_events.forEach( (single_event) => { %>
+                    <div class="event-border">
+                        <h4>
+                            <%= single_event.event_name %>
+                        </h4> 
+                        <%= single_event.event_date %> <br>
+                        <%= single_event.event_time %> <br>
+                        <%= single_event.event_location %> 
+                        <br>
+                        <%= single_event.event_additionalInfo %>
+                    </div>
+                    <br>
+                    <br>
+        
+                <% }) %>
+            </div> 
+            <div>
+                <img src="" alt="picture of a get together">
             </div>
-
-
+        <!-- LIST OF EVEVNTS ENDS HERE -->   
         </div> 
     </div>     
     <!-- **** -->

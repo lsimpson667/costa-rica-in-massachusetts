@@ -17,6 +17,10 @@
     <input type="text" id="eventLocation" name="eventLocation">
     <br>
     <br>
+    <label for="additionalInfo">Additional Information: </label>
+    <input type="text" id="additionalInfo" name="additionalInfo">
+    <br>
+    <br>
     <button class="submit-button" id="addEventButton">Submit</button>
 </form>
 <br>
@@ -28,7 +32,7 @@
     
         <% all_events.forEach( (single_event) => { %>
             <p>
-                <a href="<%= single_event.event_name %>"><%= single_event.event_name %></a>
+                <a href="/event_details"><%= single_event.event_name %></a>
             </p>   
         <% }) %>
        
