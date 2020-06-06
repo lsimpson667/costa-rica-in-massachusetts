@@ -33,12 +33,12 @@ app.use(passport.session()); // needed if the app is persistent login sessions (
 
 // Declare any constants or variables here for Database
 let db_handler;
-const DB_URL = "mongodb://localhost:27017";
+const DB_URL = process.env.DB_URL;
 // const DB_URL = process.env.DB_URL;
-const DB_NAME = "costaricaProjectDB";
-const USER_COLLECTION = "users";
-const EVENT_COLLECTION = "events";
-const ADMIN_COLLECTION = "admin"
+const DB_NAME = process.env.DB_NAME;
+const USER_COLLECTION = process.env.USER_COLLECTION;
+const EVENT_COLLECTION = process.env.EVENT_COLLECTION;
+const ADMIN_COLLECTION = process.env.ADMIN_COLLECTION;
 
 app.listen(PORT, () => {
     console.log(`Server Started on Port: ${PORT}`);
@@ -264,7 +264,7 @@ app.get('/admin/add_event', (request, response) => {
 });
 
 // This route shows a page with nothing but the event name and it's details
-app.get('/event_details/:event_id', (request, response) => { 
+app.get('/event_details/:event_id', (req, res) => { 
     const parameters = req.params;
     // converted into an object Id for mongo db compass
     const event_id = mongodb.ObjectId(parameters['event_id']); 
@@ -276,7 +276,7 @@ app.get('/event_details/:event_id', (request, response) => {
         }
         else{
             // render it to show the page with specified info on it. (IT IS NOT A ROUTE!)
-            response.render('event_details', {
+            res.render('event_details', {
             event: result[0]
             });
         }

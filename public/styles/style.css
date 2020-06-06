@@ -482,13 +482,14 @@ iframe {
 
 /* footer starts here */
 footer {
-    background-color: lightskyblue;
+    background-color: white;
     display: flex;
     /* flex-direction: column; */
     justify-content: center;
     align-items: center;
     color: black;
     /* height: 700px; */
+    border-top: 5px solid black;
 }
 .footer-left-container {
 width: 40vw;
@@ -500,7 +501,7 @@ height: 600px;
 padding-top: 90px;
 padding-right: 50px;
 padding-left: 50px;
-background-color: lightskyblue;
+background-color: white;
 
 }
 .phone-number {
@@ -577,3 +578,5 @@ width: 700px;
       margin-top: 0;
     }
   }
+
+/* Responsive */

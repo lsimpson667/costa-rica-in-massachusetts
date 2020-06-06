@@ -1,0 +1,49 @@
+[{
+  "_id": {
+    "$oid": "5ececc8c3fe6841954ebb4b8"
+  },
+  "event_name": "Fall Fest",
+  "event_date": "9/22/25",
+  "event_time": "9:25",
+  "event_location": "John Joseph Park"
+},{
+  "_id": {
+    "$oid": "5ececc9b3fe6841954ebb4b9"
+  },
+  "event_name": "Bday PRty",
+  "event_date": "2-15",
+  "event_time": "10:15",
+  "event_location": "Geneva ave"
+},{
+  "_id": {
+    "$oid": "5ed8393574d76a3374beb97f"
+  },
+  "event_name": "Zoo",
+  "event_date": "10/22/13",
+  "event_time": "7pm",
+  "event_location": "Franklin Park, 35 Joselop Rd Boston, MA 02129"
+},{
+  "_id": {
+    "$oid": "5ed83b7a74d76a3374beb980"
+  },
+  "event_name": "Halloween Town",
+  "event_date": "3/27/2013",
+  "event_time": "10:15",
+  "event_location": "Downtown"
+},{
+  "_id": {
+    "$oid": "5ed91c1b74d76a3374beb981"
+  },
+  "event_name": "Salsa Fest",
+  "event_date": "3/27/2013",
+  "event_time": "9:25",
+  "event_location": "Cambridge MA"
+},{
+  "_id": {
+    "$oid": "5edb9f6bd25c9c0718b1d711"
+  },
+  "event_name": "Walk in the park",
+  "event_date": "10/22/13",
+  "event_time": "2pm",
+  "event_location": "Geneva ave"
+}]

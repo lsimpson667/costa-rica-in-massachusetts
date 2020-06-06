@@ -12,6 +12,9 @@
   },
   "author": "",
   "license": "ISC",
+  "engines": {
+    "node": "v12.0.0"
+  },
   "bugs": {
     "url": "https://github.com/lsimpson667/costa-rica-in-massachusetts/issues"
   },
