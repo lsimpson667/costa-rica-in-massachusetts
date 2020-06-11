@@ -5,6 +5,7 @@ const dotenv = require('dotenv');
 const passport = require('passport'); // adding passport
 const LocalStrategy = require('passport-local').Strategy; // adds a strategy called Passport Local
 const flash = require('connect-flash'); // gives error messages to Passport
+const ensureLogin = require('connect-ensure-login');
 
 const path = require('path');
 
@@ -58,13 +59,13 @@ app.listen(PORT, () => {
 });
 
 // GET, GET, POST, GET, GET, PUT, DELETE
-app.get('/', (request, response) => { 
-    response.render('index', { 
-        thanks: request.query.thanks
+app.get('/', (req, res) => { 
+    res.render('index', { 
+        thanks: req.query.thanks
 
     });
 });
-
+// for login
 app.get('/login',
 (req, res) => {
   res.render('login');
@@ -74,17 +75,16 @@ app.post('/login',
 // passport.authenticate with the local strategy will handle the login request.
   passport.authenticate('local', {
     failureRedirect: '/login', 
-    successRedirect: '/',
+    successRedirect: '/admin',
     failureFlash: true // NEW! this will turns on the error message for connect-flash
   })
 );
 
-app.get('/register',
-(req, res) => {
+app.get('/register', ensureLogin.ensureLoggedIn(), (req, res) => {
   res.render('register');
 });
-
-app.post('/register', (req, res) => {
+// This is also for registering
+app.post('/admin', (req, res) => {
   const form_data = req.body;
   const username = form_data['username'];
   const password = form_data['password']
@@ -98,8 +98,9 @@ app.post('/register', (req, res) => {
       email: email
   }
 
-  db_handler.collection(COLLECTION_NAME).insertOne(my_object, (err, result) => {
-      if (err) {
+  db_handler.collection(ADMIN_COLLECTION).insertOne(my_object, (err, result) => {
+  
+    if (err) {
           console.log("Error: " + err);
       }
       else {
@@ -112,14 +113,14 @@ app.post('/register', (req, res) => {
 app.get('/logout',
   (req, res) => {
     req.logout();
+    req.session = null;
     res.redirect('/');
 });
 
   // connect-ensure-login is a middleware ensures that a user is logged in. If a request is received that is unauthenticated, the request will be redirected to a login page. The URL will be saved in the session, so the user can be conveniently returned to the page that was originally requested.
-  app.get('/profile',
-  require('connect-ensure-login').ensureLoggedIn(),
+  app.get('/profile', ensureLogin.ensureLoggedIn(),
   (req, res) => {
-    db_handler.collection(COLLECTION_NAME).find({username: req.user.username}).toArray((err, user) => {
+    db_handler.collection(ADMIN_COLLECTION).find({username: req.user.username}).toArray((err, user) => {
       if(err) return console.log(err)
       let userObject = user[0]
       console.log(userObject)
@@ -137,7 +138,7 @@ app.get('/logout',
 passport.use(new LocalStrategy(
     (username, password, done) => {
      
-      db_handler.collection(COLLECTION_NAME).find({username: username}).toArray((err, user) => {
+      db_handler.collection(ADMIN_COLLECTION).find({username: username}).toArray((err, user) => {
         if(err){
           return err;
         }
@@ -158,20 +159,6 @@ passport.use(new LocalStrategy(
   
   
   
-  // Configure Passport authenticated session persistence.
-  //
-  // In order to restore authentication state across HTTP requests, Passport needs
-  // to serialize users into and deserialize users out of the session.  The
-  // typical implementation of this is as simple as supplying the user ID when
-  // serializing, and querying the user record by ID from the database when
-  // deserializing.
-  passport.serializeUser((user, done) => {
-    done(null, user.username);
-  });
-  
-  passport.deserializeUser((username, done) => {
-    done(null, {username: username});
-  }); 
   
 // ROUTE FOR USER ENTRIES STARTS HERE >>>>>>>>>>>>>>>>>>>>>>>>>>>>
 //  I don't think this should be a post
@@ -223,15 +210,19 @@ app.post('/add', (req, res) => {
 
 // ADMIN ROUTES START HERE>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 // This route shows 4 links ADD EEVENT, UPDATE EVENT, DELEDT EVENT, and SEE USER ENTRIES
-app.get('/admin', (request, response) => { 
-    
-    response.render('admin', { 
-        
-    });
+app.get('/admin', ensureLogin.ensureLoggedIn(),
+(req, res) => { 
+    db_handler.collection(ADMIN_COLLECTION).find({username: req.user.username}).toArray((err, user) => {
+        if(err) return console.log(err)
+        if(user) res.render('admin')
+      })
+  
 });
 
 // This route goes shows all user entries in the link "see user entries" 
-app.get('/admin/user_entries', (req, res) => {
+app.get('/admin/user_entries', ensureLogin.ensureLoggedIn(),(req, res) => {
+    
+
     db_handler.collection(USER_COLLECTION).find({}).toArray( (error, result) => {
         if (error) {
             console.log(error);
@@ -247,8 +238,8 @@ app.get('/admin/user_entries', (req, res) => {
 
 
 // This route gets to the form for adding an event + event list below it
-app.get('/admin/add_event', (request, response) => { 
-    
+app.get('/admin/add_event', ensureLogin.ensureLoggedIn(),(req, res) => { 
+
     db_handler.collection(EVENT_COLLECTION).find({}).toArray( (err, result)=> {
         if (err) {
             console.log(err);
@@ -256,7 +247,7 @@ app.get('/admin/add_event', (request, response) => {
         else {
             // console.log(result);
             // render it to show the page with specified info on it. (IT IS NOT A ROUTE!)
-            response.render('add_event', {
+            res.render('add_event', {
             'all_events': result
         });
         }
@@ -264,7 +255,8 @@ app.get('/admin/add_event', (request, response) => {
 });
 
 // This route shows a page with nothing but the event name and it's details
-app.get('/event_details/:event_id', (req, res) => { 
+app.get('/admin/event_details/:event_id', ensureLogin.ensureLoggedIn(), (req, res) => { 
+
     const parameters = req.params;
     // converted into an object Id for mongo db compass
     const event_id = mongodb.ObjectId(parameters['event_id']); 
@@ -284,9 +276,10 @@ app.get('/event_details/:event_id', (req, res) => {
 });
 
     // This link posts new events in several places (below the addd event form, on events.ejs page, and update event page)
-app.post('/add_event', (request, response) => { 
-    const form_data = request.body;
-    console.log(request.body);
+app.post('/add_event', (req, res) => { 
+
+    const form_data = req.body;
+    console.log(req.body);
 
     const event_name = form_data['eventName'];
     const event_date = form_data['eventDate'];
@@ -310,12 +303,12 @@ app.post('/add_event', (request, response) => {
             console.log("AN EVENT HAS BEEN ADDED");
             // send response to browser once we are done with db
             // redirect sends client to a specified route.
-            response.redirect('/admin/add_event');
+            res.redirect('/admin/add_event');
         }
     })
 });
 // This route shows a list of events that can be updated or deleted
-app.get('/admin/update_event', (req, res) => { 
+app.get('/admin/update_event', ensureLogin.ensureLoggedIn(),(req, res) => { 
 
     db_handler.collection(EVENT_COLLECTION).find({}).toArray( (err, result) => {
         if (err) {
@@ -330,7 +323,8 @@ app.get('/admin/update_event', (req, res) => {
     });
 });
 // This route shows an individual event with the option of updating or deleting it (once the form is submitted eventually want it to post events to the events.ejs as well)
-app.get('/admin/update_event/:event_id', (req, res) => {
+app.get('/admin/update_event/:event_id', ensureLogin.ensureLoggedIn(), (req, res) => {
+
     const parameters = req.params;
     // converted into an object Id for mongo db compass
     const event_id = mongodb.ObjectId(parameters['event_id']); 
@@ -350,6 +344,7 @@ app.get('/admin/update_event/:event_id', (req, res) => {
 
 // This route UPDATES an event and then redirects to the same page.
 app.post('/update_event/:event_id', (req, res)  => {
+
     const parameters = req.params;
     const event_id = mongodb.ObjectId(parameters['event_id']); 
 
@@ -362,7 +357,7 @@ app.post('/update_event/:event_id', (req, res)  => {
     const event_location = form_data['eventLocation'];
     const event_additionalInfo = form_data['eventAdditionalInfo'];
 
-    const new_values = {$set: {event_name: event_name, event_date: event_date, event_time: event_time, event_location: event_location}};
+    const new_values = {$set: {event_name: event_name, event_date: event_date, event_time: event_time, event_location: event_location, event_additionalInfo: event_additionalInfo}};
 
     db_handler.collection(EVENT_COLLECTION).updateOne({_id: event_id}, new_values, (err, result) => {
         if (err) {
@@ -378,6 +373,7 @@ app.post('/update_event/:event_id', (req, res)  => {
 
 // This route will delete the event and redirect to the page with the list of events
 app.get('/update_event/delete/:event_id', (req, res) => {
+
     const parameters = req.params;
     const event_id = mongodb.ObjectId(parameters['event_id']); 
 
@@ -388,10 +384,28 @@ app.get('/update_event/delete/:event_id', (req, res) => {
         }
         else {
             console.log(result);
-            res.redirect('/admin/update_event');
+            res.redirect('/admin');
         }
     });
 });
+
+// This route shows a list of all the events
+app.get('/admin/view_events', ensureLogin.ensureLoggedIn(),(req, res) => {
+
+    db_handler.collection(EVENT_COLLECTION).find({}).toArray( (err, result) => {
+        if (err) {
+
+            console.log(err);
+        }
+        else {
+            console.log(result);
+        res.render('view_events', {
+            'all_events': result
+            });
+        }
+    });
+});
+
 // for the events page>>>>>>>>>>>>>>>
 // This route shows all events on the events.ejs page
 
@@ -408,19 +422,8 @@ app.get('/events', (req, res) => {
             });
         }
     });
-
-    // db_handler.collection(EVENT_COLLECTION).find({}).toArray( (error, result) => {
-    //     if (error) {
-    //         console.log(error);
-    //     }else {
-    //         console.log(result);
-    //     // render this .ejs file
-    //         res.render('events', {
-    //         'all_events': result
-    //         })
-    //     }
-    // });
 });
+
 
 // for search bar>>>>>>>>>>>>>>>>>
 app.post('', (req, res) => {
@@ -431,3 +434,19 @@ app.post('', (req, res) => {
 
 
 
+  // Configure Passport authenticated session persistence.
+  //
+  // In order to restore authentication state across HTTP requests, Passport needs
+  // to serialize users into and deserialize users out of the session.  The
+  // typical implementation of this is as simple as supplying the user ID when
+  // serializing, and querying the user record by ID from the database when
+  // deserializing.
+  passport.serializeUser((user, done) => {
+    done(null, user.username);
+  });
+  
+  passport.deserializeUser((username, done) => {
+    db_handler.collection(ADMIN_COLLECTION).findById({_id: _id}, function(err, username) {
+        done(err, username);
+      });
+  }); 
