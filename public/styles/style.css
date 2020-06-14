@@ -17,7 +17,7 @@ body {
 
 
 /* navigation bar starts here */
-nav {
+/* .nav {
     background-color:rgb(48, 48, 95);
     height: 65px;
     width: 100%;
@@ -29,33 +29,65 @@ nav {
     left: 0px;
     top: 0px;
     z-index: 1;
+} */
+#navbarMainPage {
+    background-color: #30305F; 
+    position: fixed; 
+    width: 100vw; 
+    z-index: 1;
 }
+.collapse {
+    /* display: flex;
+    flex-direction: column; */
 
-.logo-container{
-    width:100px;
-    margin-left:40px;
-    margin-right:100px;
 }
+.navbar-toggler {
+    margin-right: 20px;
+}
+.logo-container{
+    /* background-color: pink; */
+    /* width:100px;
+    margin-left:10px; */
+    margin-right:100px;
+    /* margin-top: 0;
+    padding-top: 0;
+    top: 0;  */
+    
+}
+.navbar-toggler {
+    border: 1px solid white;
+}
+.navbar-brand {
+    /* display: inline;
+    padding-top: 0; */
+}
+/* .translator-and-home {
+    display: flex;
+} */
 .translator-container {
     display: flex;
-    width: 300px;
+    /* width: 300px; */
+    margin-right: 120px;
 }
 
 .spain-icon-container {
     padding-left: 5px;
 }
 select.translator-select  {
-    padding-left: 0px;
+    /* padding-left: 0px; */
     margin-left: 5px;
-    width: 155px;
-    padding: 10px 10px;
+    width: 178px;
+    padding: 5px 5px;
 }
+
 .home-button-container {
     background-color: goldenrod;
     padding: 0 20px;
-    border-radius: 10px;
-    margin-left: 80px;
+    border-radius: 20px;
+    margin-right: 30px;
+    /* margin-top: 10px; */
     
+   
 }
 .home-button-container a {
     color: black;
@@ -64,16 +96,25 @@ select.translator-select  {
     background-color: lightskyblue;
     color: rgb(48, 48, 95);
 }
+/* font {
+    sty
+} */
 .tabs-container {
-    width: 820px;
+    /* background-color: pink; */
+    margin-right: 30px;
     display: flex;
-    justify-content: space-between;
-    margin: 0 50px 0 40px;
+   
 }
 .tab-button {
-    text-decoration: none;
-    color: white; 
-    padding: 20px;   
+    /* padding: 20px 0; */
+}
+.tab-button.nav-link {
+    /* background-color: purple; */
+    /* width: 145px; */
+    /* justify-content: center; */
+    /* justify-content: space-between; */
+    /* padding: 20px; */
+    /* margin-right: 30px; */
 }
 .tab-button:hover {
     background-color: lightskyblue;
@@ -81,11 +122,13 @@ select.translator-select  {
     
 }
 .icon-nav-container {
-    width: 50px;
-    margin: 0 40px 0 0;
+    /* width: 50px;
+    margin: 15px 40px 0 0; */
+    /* margin-right: 2px; */
+    margin-top: 3px;
 }
 .icon-nav-container .fa:hover {
-    background-color: lightskyblue;
+    color: lightskyblue;
 
 }
 /* banner starts here */
@@ -108,7 +151,7 @@ select.translator-select  {
     align-items: center;
     width: 100%;
     height: 690px;
-    margin-top: 60px;
+    /* margin-top: 60px; */
 
 }
 
@@ -281,78 +324,82 @@ iframe {
     padding-bottom: 50px;
 }
 .photo-albums-subcontainer {
+    background-color: #ffc0cb;
+
     color: white;
     width: 1400px;
-    padding: 40px 0 20px 30px;
+    /* padding: 0 0 0 0; */
     display: flex;
     align-items: center;
-    justify-content: center;
+    /* justify-content: center; */
     border-radius: 7px;
+    /* height: 600px; */
+    /* flex-wrap: wrap; */
+    flex-direction: column;
 }
 .album-container {
-    display: flex;
+    background-color: rgb(26, 224, 26);
+
+    /* display: flex; */
     flex-direction: column;
-    /* justify-content: center; */
-    width: 400px;
-    padding-left: 10px;
-    padding-top: 40px;
+    justify-content: center;
+    align-items: center;
+    /* width: 400px; */
+    /* padding-left: 10px; */
+    /* padding-top: 40px; */
     /* text-align: center; */
     
 }
 .album-image-container {
-    /* background-color: plum; */
-    width: 250px;        
+    background-color: red;
+
+    width: 250px;
     border-radius:7px;
 
     position: relative;
-    /* width: 50%; */
+    /* width: 40%; */
+    max-width: 300px;
+    /* margin-bottom: 50px; */
 
 }
-.album-image-container.large {
+/* .album-image-container.large {
     height: 300px;
 }
 .album-image-container.small {
     height: 100px;
-}
+} */
 .album-image {
-    max-width: 100%;
-    max-height: 100%;
+    background-color: rgb(245, 23, 160);
+
+    /* max-width: 100%; */
+    /* max-height: 100%; */
     display: block; /* remove extra space below image */
     border-radius: 7px;
     border: 5px solid white; 
 
-    /* display: block; */
-    /* width: 100%; */
-    /* height: auto; */
-    
+    display: block;
+    width: 100%;
+    height: auto;
+    width: 350px;
 }
 .overlay {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 100%;
-    width: 106%;
-    opacity: 0;
+    position: absolute; 
+    bottom: 0; 
+    background: rgb(0, 0, 0);
+    background: rgba(0, 0, 0, 0.5); /* Black see-through */
+    color: #f1f1f1; 
+    width: 128%;
     transition: .5s ease;
-    background-color: #008CBA;
-    border-radius: 7px;
+    opacity:0;
+    color: white;
+    font-size: 20px;
+    padding: 20px;
+    text-align: center;
 }
 .album-image-container:hover .overlay {
     opacity: 1;
 }
-.text {
-    color: white;
-    font-size: 20px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -webkit-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    text-align: center;
-  }
+
 /* Who we are section starts here */
 hr#beginningOfSection4 {
     background-color: white;
@@ -449,7 +496,7 @@ hr#beginningOfSection5 {
   }
   
   /* Clear floats after the columns */
-  .row:after {
+.row:after {
     content: "";
     display: table;
     clear: both;
@@ -492,13 +539,13 @@ footer {
     border-top: 5px solid black;
 }
 .footer-left-container {
-width: 40vw;
+width: 60vw;
 border-right: 20px solid black;
 border-top-right-radius: 50%;
 border-bottom-right-radius: 50%;
-height: 600px;
+height: 700px;
 /* text-align: center; */
-padding-top: 90px;
+padding-top: 120px;
 padding-right: 50px;
 padding-left: 50px;
 background-color: white;
@@ -514,7 +561,7 @@ background-color: white;
 }
 .footer-facebook-promo {
     background-color:rgb(48, 48, 95);
-    width: 150px;
+    width: 270px;
     border: 1px solid black;
     border-radius: 7px;
     display: flex;
@@ -523,12 +570,13 @@ background-color: white;
     align-items: center;
     text-align: center;
     margin-left: 45px;
-    padding: 30px;
+    padding: 40px 0;
     color: white;
 }
 #fa:hover {
     position: relative;
     top: -3px;
+    color: lightskyblue;
 }
 .footer-right-container {
     /* padding-left: 50px; */

@@ -1,31 +1,52 @@
-<nav id="navbarMainPage" class="navbar-container"> <!-- Navbar starts here -->
+<nav id="navbarMainPage" class="navbar navbar-expand-lg"> <!-- Navbar starts here -->
     <div class="logo-container">
-        <img src="./images/logoFinal2.png" alt="logo" style="width: 100px;">
+        <a class="navbar-brand" href="#"><img src="./images/logoFinal2.png" alt="logo" style="width: 100px;"></a>
     </div>
-    <div class="translator-container">
-<!-- GTRANSLATE -->
-        <div class="usa-icon-container">
-            <a href="#" onclick="doGTranslate('es|en');return false;" title="English" class="nturl" style="background-position:-0px -0px;"><img src="./images/TranslatorIcons/usaCircle128.png" height="32" width="32" alt="English" /></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fa fa-bars" aria-hidden="true" style="color: white;"></i>
+        <!-- <span class="navbar-toggler-icon"></span> -->
+      </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+        <br>
+            
+        <!-- GTRANSLATE -->
+                <div class="translator-container">
+                    <div class="usa-icon-container">
+                        <a href="#" onclick="doGTranslate('es|en');return false;" title="English" class="nturl" style="background-position:-0px -0px;"><img src="./images/TranslatorIcons/usaCircle128.png" height="32" width="32" alt="English" /></a>
+                    </div>
+                    <div class="spain-icon-container">    
+                        <a href="#" onclick="doGTranslate('es|es');return false;" title="Spanish" class="nturl" style="background-position:-600px -200px;"><img src="./images/TranslatorIcons/spainCircle128.png" height="32" width="32" alt="Spanish" /></a>
+                    </div>
+                    <div class="select-language-container">
+                        <select onchange="doGTranslate(this);" class="translator-select"><option value="">Select Language</option><option value="es|en">English</option><option value="es|es">Spanish</option></select><div id="google_translate_element2"></div>
+                    </div>
+                </div>
+                
+        <!-- GTRANSLATE -->
+        <br>
+            <div class="home-button-container">
+                <a class="nav-item nav-link active" href="/"><b>HOME</b><span class="sr-only">(current)</span></a>
+            </div>
+            <br>
+            <div class="tabs-container">
+                <a href="/#beginningOfSection1" class="tab-button nav-item nav-link"><b>Misión y Valores</b></a>
+            </div>
+            <div class="tabs-container">
+                <a href="/#beginningOfSection2" class="tab-button nav-item nav-link"><b>Eventos</b></a>
+            </div> 
+            <div class="tabs-container">   
+                <a href="/#beginningOfSection3" class="tab-button nav-item nav-link"><b>Galeria</b></a>
+            </div> 
+            <div class="tabs-container">   
+                <a href="/#beginningOfSection4" class="tab-button nav-item nav-link"><b>Quienes somos</b></a>
+            </div> 
+            <div class="tabs-container">      
+                <a href="/#beginningOfSection5" class="tab-button nav-item nav-link"><b>Contactonos</b></a>
+            </div>
+            <div class="icon-nav-container">
+                <a href="https://www.facebook.com/costaricamass/" target="_blank"><i class="fa fa-facebook-square fa-lg nav-item nav-link" aria-hidden="true"></i></a>
+            </div>
         </div>
-        <div class="spain-icon-container">    
-            <a href="#" onclick="doGTranslate('es|es');return false;" title="Spanish" class="nturl" style="background-position:-600px -200px;"><img src="./images/TranslatorIcons/spainCircle128.png" height="32" width="32" alt="Spanish" /></a>
-        </div>
-        <div class="select-language-container">
-            <select onchange="doGTranslate(this);" class="translator-select"><option value="">Select Language</option><option value="es|en">English</option><option value="es|es">Spanish</option></select><div id="google_translate_element2"></div>
-        </div>
-<!-- GTRANSLATE -->
-    </div>
-    <div class="home-button-container">
-        <a href="/" class="home-button"><b>HOME</b></a>
-    </div>
-    <div class="tabs-container">
-        <a href="/#beginningOfSection1" class="tab-button"><b>Misión y Valores</b></a>
-        <a href="/#beginningOfSection2" class="tab-button"><b>Eventos</b></a>
-        <a href="/#beginningOfSection3" class="tab-button"><b>Galeria</b></a>
-        <a href="/#beginningOfSection4" class="tab-button"><b>Quienes somos</b></a>
-        <a href="/#beginningOfSection5" class="tab-button"><b>Contactonos</b></a>
-    </div>
-    <div class="icon-nav-container">
-        <a href="https://www.facebook.com/costaricamass/" target="_blank"><i class="fa fa-facebook-square fa-lg" aria-hidden="true"></i></a>
     </div>
 </nav> <!-- Navbar ends here -->

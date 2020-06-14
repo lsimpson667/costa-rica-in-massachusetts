@@ -50,7 +50,7 @@ app.listen(PORT, () => {
             console.log("ERROR:" + err);
         } else {
             // Upon success, print a message saying "Database Connected"
-            console.log("DATABASE CONNECTED");
+            console.log("MONGODB DATABASE CONNECTED");
             // Upon success, you should also connect to the 'bsj' database.
             // Use db_handler for future use
             db_handler = db_client.db(DB_NAME);
@@ -97,7 +97,20 @@ app.post('/admin', (req, res) => {
       displayname: displayName,
       email: email
   }
+// validation starts here
+  if (username.legnth < 8) {
+    res.send("Username cannot be less than 8 charaters.")
+}
+if (password.legnth <8) {
+    res.send("Password cannot be less than 8 charaters.")
+}
+if (email.legnth <10) {
+    res.send("Email cannot be less than 10 charaters.")
+}
 
+res.send("Got your form data");
+
+// validation ends here
   db_handler.collection(ADMIN_COLLECTION).insertOne(my_object, (err, result) => {
   
     if (err) {
@@ -191,7 +204,36 @@ app.post('/add', (req, res) => {
         userComment: userComment
     }
     console.log(user_obj);
-
+// validation starts here
+    if (userFirstName.legnth <2 || userFirstName.legnth >20) {
+        res.send("First name must be between 2-20 characters.")
+    }
+    if (userLastName.legnth <2 || userLastName.legnth > 15) {
+        res.send("Last name must be between 2-20 characters.")
+    }
+    if (userEmail.length < 10) {
+        res.send("Email Cannot be < 10 characters.");
+    }
+    if (userPhoneNumber.legnth < 10 || userPhoneNumber.legnth > 10) {
+        res.send("Phone number must be 10 digits long.")
+    }
+    if (userAddress.legnth < 7) {
+        res.send("Address cannot be less than 7 characters.")
+    }
+    if (userCity.legnth <5) {
+        res.send("City cannot be less than 4 characters.")
+    }
+    if (userState.legnth < 2 || userState.legnth > 2) {
+        res.send("State must be 2 characters.")
+    }
+    if (userZipcode.legnth < 5 || userZipcode.legnth > 5) {
+        res.send("Zip code must be 5 characters.")
+    }    
+    if (userComment.legnth <10) {
+        res.send("Comment must be at least 10 characters.")
+    }
+    res.send("Got your form data");
+// Validation ends herr
     db_handler.collection(USER_COLLECTION).insertOne(user_obj, (error, result) => {
         if (error) {
             console.log(error);
@@ -295,7 +337,19 @@ app.post('/add_event', (req, res) => {
         event_additionalInfo: event_additionalInfo
     }
     console.log(event_obj);
+// validation starts here
+if (event_name.legnth < 8) {
+    res.send("Username cannot be less than 8 charaters.")
+}
+if (password.legnth <8) {
+    res.send("Password cannot be less than 8 charaters.")
+}
+if (event_location.legnth < 10) {
+    res.send("Location or address cannot 10 charaters.")
+}
 
+res.send("Got your form data");
+// validation ends here
     db_handler.collection(EVENT_COLLECTION).insertOne(event_obj, (error, result) => {
         if (error) {
             console.log(error);
@@ -358,6 +412,19 @@ app.post('/update_event/:event_id', (req, res)  => {
     const event_additionalInfo = form_data['eventAdditionalInfo'];
 
     const new_values = {$set: {event_name: event_name, event_date: event_date, event_time: event_time, event_location: event_location, event_additionalInfo: event_additionalInfo}};
+// validation starts here
+if (event_name.legnth < 8) {
+    res.send("Username cannot be less than 8 charaters.")
+}
+if (password.legnth <8) {
+    res.send("Password cannot be less than 8 charaters.")
+}
+if (event_location.legnth < 10) {
+    res.send("Location or address cannot 10 charaters.")
+}
+
+res.send("Got your form data");
+// validation ends here
 
     db_handler.collection(EVENT_COLLECTION).updateOne({_id: event_id}, new_values, (err, result) => {
         if (err) {
@@ -396,8 +463,7 @@ app.get('/admin/view_events', ensureLogin.ensureLoggedIn(),(req, res) => {
         if (err) {
 
             console.log(err);
-        }
-        else {
+        } else {
             console.log(result);
         res.render('view_events', {
             'all_events': result
@@ -422,12 +488,6 @@ app.get('/events', (req, res) => {
             });
         }
     });
-});
-
-
-// for search bar>>>>>>>>>>>>>>>>>
-app.post('', (req, res) => {
-
 });
 
 
