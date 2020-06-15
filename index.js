@@ -83,6 +83,8 @@ app.post('/login',
 app.get('/register', ensureLogin.ensureLoggedIn(), (req, res) => {
   res.render('register');
 });
+
+
 // This is also for registering
 app.post('/admin', (req, res) => {
   const form_data = req.body;
@@ -97,28 +99,30 @@ app.post('/admin', (req, res) => {
       displayname: displayName,
       email: email
   }
+  
 // validation starts here
-  if (username.legnth < 8) {
-    res.send("Username cannot be less than 8 charaters.")
-}
-if (password.legnth <8) {
-    res.send("Password cannot be less than 8 charaters.")
-}
-if (email.legnth <10) {
-    res.send("Email cannot be less than 10 charaters.")
-}
-
-res.send("Got your form data");
+// if (username.length < 8) {
+//     res.send("Username cannot be less than 8 charaters.")
+// }
+// if (password.length <8) {
+//     res.send("Password cannot be less than 8 charaters.")
+// }
+// if (email.length <10) {
+//     res.send("Email cannot be less than 10 charaters.")
+// }
 
 // validation ends here
   db_handler.collection(ADMIN_COLLECTION).insertOne(my_object, (err, result) => {
   
     if (err) {
+            console.log(result);
           console.log("Error: " + err);
       }
       else {
+
           console.log("One Entry Added");
-          res.redirect('/login');
+          console.log(`Entry ${result}`)
+          res.redirect('/register');
       }
   });
 });
@@ -174,7 +178,7 @@ passport.use(new LocalStrategy(
   
   
 // ROUTE FOR USER ENTRIES STARTS HERE >>>>>>>>>>>>>>>>>>>>>>>>>>>>
-//  I don't think this should be a post
+
 app.post('/add', (req, res) => {
     // Do something here with your request body
     const form_data = req.body;
@@ -205,34 +209,34 @@ app.post('/add', (req, res) => {
     }
     console.log(user_obj);
 // validation starts here
-    if (userFirstName.legnth <2 || userFirstName.legnth >20) {
-        res.send("First name must be between 2-20 characters.")
-    }
-    if (userLastName.legnth <2 || userLastName.legnth > 15) {
-        res.send("Last name must be between 2-20 characters.")
-    }
-    if (userEmail.length < 10) {
-        res.send("Email Cannot be < 10 characters.");
-    }
-    if (userPhoneNumber.legnth < 10 || userPhoneNumber.legnth > 10) {
-        res.send("Phone number must be 10 digits long.")
-    }
-    if (userAddress.legnth < 7) {
-        res.send("Address cannot be less than 7 characters.")
-    }
-    if (userCity.legnth <5) {
-        res.send("City cannot be less than 4 characters.")
-    }
-    if (userState.legnth < 2 || userState.legnth > 2) {
-        res.send("State must be 2 characters.")
-    }
-    if (userZipcode.legnth < 5 || userZipcode.legnth > 5) {
-        res.send("Zip code must be 5 characters.")
-    }    
-    if (userComment.legnth <10) {
-        res.send("Comment must be at least 10 characters.")
-    }
-    res.send("Got your form data");
+    // if (userFirstName.length <2 || userFirstName.length >20) {
+    //     res.send("First name must be between 2-20 characters.")
+    // }
+    // if (userLastName.length <2 || userLastName.length > 15) {
+    //     res.send("Last name must be between 2-20 characters.")
+    // }
+    // if (userEmail.length < 10) {
+    //     res.send("Email Cannot be < 10 characters.");
+    // }
+    // if (userPhoneNumber.length < 10 || userPhoneNumber.length > 10) {
+    //     res.send("Phone number must be 10 digits long.")
+    // }
+    // if (userAddress.length < 7) {
+    //     res.send("Address cannot be less than 7 characters.")
+    // }
+    // if (userCity.length <5) {
+    //     res.send("City cannot be less than 4 characters.")
+    // }
+    // if (userState.length < 2 || userState.length > 2) {
+    //     res.send("State must be 2 characters.")
+    // }
+    // if (userZipcode.length < 5 || userZipcode.length > 5) {
+    //     res.send("Zip code must be 5 characters.")
+    // }    
+    // if (userComment.length <10) {
+    //     res.send("Comment must be at least 10 characters.")
+    // }
+
 // Validation ends herr
     db_handler.collection(USER_COLLECTION).insertOne(user_obj, (error, result) => {
         if (error) {
@@ -338,17 +342,14 @@ app.post('/add_event', (req, res) => {
     }
     console.log(event_obj);
 // validation starts here
-if (event_name.legnth < 8) {
-    res.send("Username cannot be less than 8 charaters.")
-}
-if (password.legnth <8) {
-    res.send("Password cannot be less than 8 charaters.")
-}
-if (event_location.legnth < 10) {
-    res.send("Location or address cannot 10 charaters.")
-}
+// if (event_name.length < 8) {
+//     res.send("Username cannot be less than 8 charaters.")
+// }
+// if (event_location.length < 10) {
+//     res.send("Location or address cannot 10 charaters.")
+// }
 
-res.send("Got your form data");
+
 // validation ends here
     db_handler.collection(EVENT_COLLECTION).insertOne(event_obj, (error, result) => {
         if (error) {
@@ -413,17 +414,17 @@ app.post('/update_event/:event_id', (req, res)  => {
 
     const new_values = {$set: {event_name: event_name, event_date: event_date, event_time: event_time, event_location: event_location, event_additionalInfo: event_additionalInfo}};
 // validation starts here
-if (event_name.legnth < 8) {
-    res.send("Username cannot be less than 8 charaters.")
-}
-if (password.legnth <8) {
-    res.send("Password cannot be less than 8 charaters.")
-}
-if (event_location.legnth < 10) {
-    res.send("Location or address cannot 10 charaters.")
-}
+// if (event_name.length < 8) {
+//     res.send("Username cannot be less than 8 charaters.")
+// }
+// if (password.length <8) {
+//     res.send("Password cannot be less than 8 charaters.")
+// }
+// if (event_location.length < 10) {
+//     res.send("Location or address cannot 10 charaters.")
+// }
 
-res.send("Got your form data");
+
 // validation ends here
 
     db_handler.collection(EVENT_COLLECTION).updateOne({_id: event_id}, new_values, (err, result) => {
@@ -506,7 +507,7 @@ app.get('/events', (req, res) => {
   });
   
   passport.deserializeUser((username, done) => {
-    db_handler.collection(ADMIN_COLLECTION).findById({_id: _id}, function(err, username) {
+    db_handler.collection(ADMIN_COLLECTION).find({username: username}, function(err, username) {
         done(err, username);
       });
   }); 

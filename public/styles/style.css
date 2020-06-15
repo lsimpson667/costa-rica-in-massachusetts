@@ -35,6 +35,7 @@ body {
     position: fixed; 
     width: 100vw; 
     z-index: 1;
+    border-bottom: 1px solid white;
 }
 .collapse {
     /* display: flex;
@@ -67,7 +68,7 @@ body {
 .translator-container {
     display: flex;
     /* width: 300px; */
-    margin-right: 120px;
+    margin-right: 90px;
 }
 
 .spain-icon-container {
@@ -119,6 +120,7 @@ select.translator-select  {
 .tab-button:hover {
     background-color: lightskyblue;
     color: rgb(48, 48, 95);
+    border-radius: 20px;
     
 }
 .icon-nav-container {
@@ -150,22 +152,43 @@ select.translator-select  {
     text-align: center;
     align-items: center;
     width: 100%;
-    height: 690px;
+    height: 725px;
     /* margin-top: 60px; */
 
 }
 
 .banner-heading-container {
     background-color: rgba(10, 10, 10, 0.55);
-    padding: 0 50px 20px 50px;
+    padding: 40px 50px 0 50px;
     border-radius: 7px;
-    margin-top: 120px;
-
+    margin-top: 160px;
+    font-family: 'Ubuntu', sans-serif;
 }
-
+.banner-heading-container h1 {
+    -webkit-text-stroke: 1px black;
+    color: goldenrod;
+    text-shadow:
+        3px 3px 0 #000,
+        -1px -1px 0 #000,  
+        1px -1px 0 #000,
+        -1px 1px 0 #000,
+        1px 1px 0 #000;
+}
+.banner-subheading {
+    margin-top: 30px;
+    -webkit-text-stroke: 1px black;
+    color: white;
+        text-shadow:
+        3px 3px 0 #000,
+        -1px -1px 0 #000,  
+        1px -1px 0 #000,
+        -1px 1px 0 #000,
+        1px 1px 0 #000;
+}
 .flag {
     width: 250px;
     border-radius: 7px;
+    margin-top: 20px;
 }
 
 /* Bouncy Arrow starts here*/
@@ -204,7 +227,7 @@ a { color: white; text-decoration: none; }
 
 /* Mision and values section start here */
 hr#beginningOfSection1 {
-    padding-bottom: 50px;
+    padding-bottom: 80px;
     margin: 0;
     width: 99.9%;
     background-color: goldenrod;
@@ -228,10 +251,11 @@ h2.header {
 
 /* Events start section Here */
 hr#beginningOfSection2 {
-    padding-bottom: 50px;
+    padding-bottom: 80px;
     margin: 0;
     border-top: 1px solid white;
     background-color: white;
+    /* width: 99.9%; */
 
 }
 .events-container {
@@ -239,7 +263,7 @@ hr#beginningOfSection2 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 620px;
+    height: auto;
 }
 .user-instructions {
  margin-bottom: 50px;
@@ -254,8 +278,8 @@ hr#beginningOfSection2 {
 }
 .individual-event-container {
     background-color: white;
-    width: 400px;
-    height: 300px;
+    width: 405px;
+    height: 310px;
     border: 1px solid black;
     border-radius: 7px;
     display: flex;
@@ -264,8 +288,11 @@ hr#beginningOfSection2 {
     align-items: center;
     margin: 0 5px;
     padding-top: 20px;
+    text-align: center;
 }
 .events-image-container1 {
+    /* background-color: lime; */
+
     width: 300px;
     height: 200px;
     background-image: url(../images/bbq.jpg);
@@ -275,6 +302,8 @@ hr#beginningOfSection2 {
 
 }
 .events-image-container2 {
+    /* background-color: lime; */
+
     width: 300px;
     height: 200px;
     background-image: url(../images/christmas2.jpg);
@@ -284,6 +313,7 @@ hr#beginningOfSection2 {
 
 }
 .events-image-container3 {
+    /* background-color: lime; */
     width: 300px;
     height: 200px;    
     background-image: url(../images/microphone.jpg);
@@ -292,26 +322,44 @@ hr#beginningOfSection2 {
     border-radius: 7px;
 
 }
+.events-image-container1:hover{
+    zoom: 1.1;
+    /* border: px solid lightskyblue; */
+}
+.events-image-container2:hover{
+    zoom: 1.1;
+    /* border: px solid lightskyblue; */
+}
+.events-image-container3:hover{
+    zoom: 1.1;
+    /* border-radius: 7px; */
+    /* border: px solid lightskyblue; */
+}
 .individual-event-container a {
     text-decoration: none;
     color: black;
 }
 .event-name:hover {
-    font-size: 120%;
+    /* font-size: 120%; */
     font-weight: bold;
+    
+}
+.events-image-container3 ::after {
+    box-sizing: none;
 }
 
 /* Gallery section starts here */
 hr#beginningOfSection3 {
     background-color: white;
-    padding-bottom: 50px;
+    padding-bottom: 80px;
     margin: 0;
+    
 }
 .featured-videos {
     text-align:center;
 }
 
-iframe {
+.featured-videos iframe {
     border-radius: 7px;
     border: 5px solid white;
 }
@@ -324,7 +372,7 @@ iframe {
     padding-bottom: 50px;
 }
 .photo-albums-subcontainer {
-    background-color: #ffc0cb;
+    /* background-color: #ffc0cb; */
 
     color: white;
     width: 1400px;
@@ -338,16 +386,16 @@ iframe {
     flex-direction: column;
 }
 .album-container {
-    background-color: rgb(26, 224, 26);
+    /* background-color: rgb(26, 224, 26); */
 
     /* display: flex; */
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    /* width: 400px; */
+    /* justify-content: center; */
+    /* align-items: center; */
+    width: 350px;
     /* padding-left: 10px; */
     /* padding-top: 40px; */
-    /* text-align: center; */
+    text-align: center;
     
 }
 .album-image-container {
@@ -388,26 +436,37 @@ iframe {
     background: rgb(0, 0, 0);
     background: rgba(0, 0, 0, 0.5); /* Black see-through */
     color: #f1f1f1; 
-    width: 128%;
+    width: 140%;
     transition: .5s ease;
     opacity:0;
     color: white;
     font-size: 20px;
     padding: 20px;
     text-align: center;
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
 }
 .album-image-container:hover .overlay {
     opacity: 1;
 }
+.album-image-container:hover {
+    position: relative;
+    top: -4px;
+    /* opacity: 1.5; */
+    /* filter: grayscale(100%); */
+    filter: brightness(50%);
+}
+
 
 /* Who we are section starts here */
 hr#beginningOfSection4 {
     background-color: white;
-    padding-bottom: 50px;
+    padding-bottom: 80px;
     margin: 0;
 }
 .who-we-are-container {
-    padding: 10px 0 120px 0;
+    padding: 0 0 120px 0;
+    height: auto;
 }
 .who-we-are-subcontainer {
     display: flex;
@@ -428,7 +487,7 @@ hr#beginningOfSection4 {
 /* Contacts section starts here */
 hr#beginningOfSection5 {
     background-color: white;
-    padding-bottom: 50px;
+    padding-bottom: 80px;
     margin: 0;
 }
 .contacts-container {
@@ -511,19 +570,24 @@ hr#beginningOfSection5 {
     border:1px solid green;
     border-radius: 4px;
     padding: 10px 20px;
+    margin-left: 200px;
 }
 .submit-button:hover {
     background-color: #45a049;
-  }
+}
+#thankYouMsg {
+    margin: 10px 0  0 100px;
+}
 .contacts-right-container {
 background-color: #f2f2f2;
-padding: 20px 20px 0 20px;
+/* padding: 20px; */
 height: 370px;
 border-radius: 4px;
 margin-top: 55px;
 }
-iframe {
+.contacts-right-container iframe {
     border-radius: 4px;
+    padding: 20px 20px 0px 20px; 
 }
 
 
@@ -634,3 +698,18 @@ width: 700px;
   }
 
 /* Responsive */
+/* Use a media query to add a breakpoint at 1160px: */
+@media screen and (max-width: 1160px) {
+    .contacts-right-container, .contacts-subcontainer,  .map {
+      width: 100%; /* The width is 100%, when the viewport is 11600px or smaller */
+      flex-direction: column;
+    }
+    .who-we-are-subcontainer, .events-subcontainer {
+        flex-wrap: wrap;
+        
+      }
+  }
+
+  @media screen and (max-width: 1160px) {
+    
+  }
