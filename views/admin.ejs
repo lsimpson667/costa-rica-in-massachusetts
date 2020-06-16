@@ -1,27 +1,56 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h2>Administrative Options:</h2>
-    <br>
-
-    <a href="/admin/view_events">SEE All EVENTS</a>
-    <br><br>
-    <a href="/admin/add_event">ADD AN EVENT</a>
-    <br><br>
-    <a href="/admin/update_event">UPDATE AN EVENT</a>
-    <br><br>
-    <a href="/admin/update_event">DELETE AN EVENT</a>
-    <br><br>
-    <a href="/admin/user_entries">SEE USER ENTRIES</a>
-    <br> <br>
-    <p>Click <a href="/register">here</a> to creat a user.</p>
-
-    <br> <br>
-    <button><a href="/logout">Logout</a></button>
-</body>
-</html>
+    <%- include('partials/head'); -%>
+    <%- include('partials/nav'); -%>
+    
+    
+    
+    <div class="admin_main_container">
+        <button id="logout_button"><a href="/logout"><b>Logout</b></a></button>
+        <br>
+        <h2 class="admin_heading">ADMINISTRATIVE OPTIONS</h2>
+        
+        <div class="admin_options">
+            <div class="option_container">
+                <a href="/admin/view_events">
+                    <i class="fa fa-calendar fa-5x admin_icons" aria-hidden="true"></i>
+                    <br>
+                    SEE All EVENTS
+                </a>
+            </div>
+            <div class="option_container">
+                <a href="/admin/add_event">
+                    <i class="fa fa-plus-circle fa-5x admin_icons" aria-hidden="true"></i>
+                    <br>
+                    ADD AN EVENT
+                </a>
+            </div>
+            <div class="option_container">
+                <a href="/admin/update_event">
+                    <i class="fa fa-pencil fa-5x admin_icons" aria-hidden="true"></i>
+                    <br>
+                    EDIT AN EVENT
+                </a>
+            </div>
+            <div class="option_container">
+                <a href="/admin/update_event">
+                    <i class="fa fa-trash-o fa-5x admin_icons" aria-hidden="true"></i>
+                    <br>
+                    DELETE AN EVENT
+                </a>
+            </div>
+            <div class="option_container">
+                <a href="/admin/user_entries">
+                <i class="fa fa-users fa-5x admin_icons" aria-hidden="true"></i>
+                <br>
+                SEE USER ENTRIES
+            </a>
+            </div>
+            <div class="option_container">
+                <a href="/register">
+                    <i class="fa fa-registered fa-5x admin_icons" aria-hidden="true"></i>
+                    <br>
+                    REGISTER AN AMINISTRATOR
+                </a>
+            </div>
+        </div>    
+    </div>
+    <%- include('partials/footer'); -%>

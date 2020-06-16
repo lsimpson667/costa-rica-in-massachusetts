@@ -1,36 +1,39 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  <h1>Register Page</h1>
-    
-  <!-- The action shows that the info is going to be put into the admin collection -->
-<form action="/admin" method="post">
-	<div>
-	<label>Username:</label>
-	<input type="text" name="username"/><br/>
-	</div>
-	<div>
-	<label>Password:</label>
-	<input type="password" name="password"/>
-  </div>
-  <div>
-    <label>Display Name:</label>
-    <input type="text" name="displayname"/><br/>
-    </div>
-    <div>
-      <label>Email:</label>
-      <input type="email" name="email"/><br/>
+<%- include('partials/head'); -%>
+<%- include('partials/nav'); -%>
+<div class="admin_main_container"> 
+  <button id="register_page_button">
+    <a href="/admin" >Return to Admin Page</a>
+  </button>
+  <br><br>
+
+  <div id="register">
+    <h1>Register An Admin</h1>
+    <i class="fa fa-registered fa-5x register_icon" aria-hidden="true"></i>
+
+    <!-- The action shows that the info is going to be put into the admin collection -->
+    <form action="/admin" method="post">
+      <div class="form-group">
+        <label>Username:</label>
+        <input type="text" name="username"/><br/>
       </div>
-	<div>
-	<input type="submit" value="Submit"/>
-	</div>
-</form>
+      <div class="form-group">
+        <label>Password:</label>
+        <input type="password" name="password"/>
+      </div>
+      <div class="form-group">
+        <label>Display Name:</label>
+        <input type="text" name="displayname"/><br/>
+      </div>
+      <div class="form-group"></div><div>
+        <label>Email:</label>
+        <input type="email" name="email"/><br/>
+      </div>
+      <br>
+      <div>
+        <button class="btn btn-light" type="submit"><a href="/login">Submit</a></button>
+      </div>
+    </form>
+  </div> 
+</div>
 
-
-</body>
-</html>
+<%- include('partials/footer'); -%>

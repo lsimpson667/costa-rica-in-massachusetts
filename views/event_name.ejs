@@ -1,21 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Event Updates</title>
-</head>
-<body>
-    <h3>Click on the company you want to update or delete.</h3>
-    <% all_events.forEach( (single_event) => { %>
-        
-        <a href="/admin/update_event/<%= single_event._id %>"><%= single_event.event_name %></a>
-        
-        <br>
-   <% }) %>
+<%- include('partials/head'); -%>
 
-    <h3><%= all_events.event_name %></h3>
-    <br>
-    <br>
+    <button class="admin_button"><a class="return-to-admin" href="/admin" >Return to Admin Page</a></button>
+    <br><br>
+
+    <div class="admin_page_container">
+        <h3>Click on the event you want to update or delete.</h3>
+        <% all_events.forEach( (single_event) => { %>
+            
+            <a href="/admin/update_event/<%= single_event._id %>"><%= single_event.event_name %></a>
+            
+            <br>
+        <% }) %>
+
+        <h3><%= all_events.event_name %></h3>
+    </div>    
 </body>
 </html>

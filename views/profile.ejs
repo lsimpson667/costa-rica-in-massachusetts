@@ -1,19 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  <h1>Profile Page</h1>
-  <p>
-    Username: <%= user.username %><br/>
-    Name: <%= user.displayname %><br/>
-    <% if (user.email) { %>
-    Email: <%= user.email %><br/>
-    <% } %>
+<%- include('partials/head'); -%>
+<%- include('partials/nav'); -%>
+
+<div class="admin_main_container">
+
+  <button class="admin_button"><a class="return-to-admin" href="/admin" >Return to Admin Page</a></button>
+  <br><br>
+
+  <div class="profile_container">
+    <h1>Profile</h1>
+    <p>
+      Username: <%= user.username %><br/>
+      Name: <%= user.displayname %><br/>
+      <% if (user.email) { %>
+      Email: <%= user.email %><br/>
+      <% } %>
     </p>
-    <a href="/logout">Log out</a>
-</body>
-</html>
+  </div>
+</div>
+
+<%- include('partials/footer'); -%>

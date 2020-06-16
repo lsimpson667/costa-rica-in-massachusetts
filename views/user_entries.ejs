@@ -1,48 +1,46 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User Entries</title>
-</head>
-<body>
-    <h2>USER ENTRIES</h2>
-    <% all_users.forEach( (single_user) => { %>
-    <br>
-     
-        <b>First Name: </b><%= single_user.userFirstName %>
-        <br>
-        <br>
-        <b>Last Name: </b><%= single_user.userLastName %>
-        <br>
-        <br>
-        <b>Email: </b><%= single_user.userEmail %> 
-        <br>
-        <br>
-        <b>Phone: </b><%= single_user.userPhoneNumber %>
-        <br>
-        <br>
-        <b>Street Address: </b><%= single_user.userAddress %>
-        <br>
-        <br>
-        <b>City: </b><%= single_user.userCity %>
-        <br>
-        <br>
-        <b>State: </b><%= single_user.userState %>
-        <br>
-        <br>
-        <b>Zip Code: </b><%= single_user.userZipcode %>
-        <br>
-        <br>
-        <b>Reference: </b><%= single_user.HearAboutUs %>
-        <br>
-        <br>
-        <b>Comment(s): </b><%= single_user.userComment %>
-        <br>
-        <br>
-        <hr>
-        <% }) %>
+<%- include('partials/head'); -%>
 
-    
-</body>
+        <button class="admin_button"><a class="return-to-admin" href="/admin" >Return to Admin Page</a></button>
+        <br><br>
+
+        <div class="admin_page_container">
+
+            <h2>USER ENTRIES</h2>
+
+            <% all_users.forEach( (single_user) => { %>
+                <br>
+                <b>First Name: </b><%= single_user.userFirstName %>
+                <br>
+                <br>
+                <b>Last Name: </b><%= single_user.userLastName %>
+                <br>
+                <br>
+                <b>Email: </b><%= single_user.userEmail %> 
+                <br>
+                <br>
+                <b>Phone: </b><%= single_user.userPhoneNumber %>
+                <br>
+                <br>
+                <b>Street Address: </b><%= single_user.userAddress %>
+                <br>
+                <br>
+                <b>City: </b><%= single_user.userCity %>
+                <br>
+                <br>
+                <b>State: </b><%= single_user.userState %>
+                <br>
+                <br>
+                <b>Zip Code: </b><%= single_user.userZipcode %>
+                <br>
+                <br>
+                <b>Reference: </b><%= single_user.HearAboutUs %>
+                <br>
+                <br>
+                <b>Comment(s): </b><%= single_user.userComment %>
+                <br>
+                <br>
+                <hr>
+            <% }) %>
+        </div>    
+    </body>
 </html>

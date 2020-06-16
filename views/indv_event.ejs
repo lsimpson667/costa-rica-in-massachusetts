@@ -1,63 +1,40 @@
-<!DOCTYPE html>
-<html lang="en">
+<%- include('partials/head'); -%>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Events</title>
-</head>
+        <button class="admin_button"><a class="return-to-admin" href="/admin" >Return to Admin Page</a></button>
+        <br><br>
 
-<body>
-    <h3><%= event.event_name %></h3>
-    
-    <%= event.event_date %>
-    <br>
-    <br>
-    <%= event.event_time %> 
-    <br>
-    <br>
-    <%= event.event_location %>
-    <br>
-    <br>
-    <%= event.event_additionalInfo %>
-    <br>
-    <br>
-    <br>
-    <hr>
+        <div class="admin_page_container">
 
-    <h4>Edit the field that you would like to update, and press Submit.
-    <br> 
-    <br>   
-    Or click "Delete Event" to delet the event. </h4>
-    ​<form action="/update_event/<%= event._id %>" method="POST">
-        <label for="eventName">Event Name: </label>
-        <input type="text" id="eventName" name="eventName" value="<%= event.event_name %>">
-        <br>
-        <br>
-        <label for="eventDate">Event Date: </label>
-        <input type="text" id="eventDate" name="eventDate" value="<%= event.event_date %>">
-        <br>
-        <br>
-        <label for="eventTime">Event Time: </label>
-        <input type="text" id="eventTime" name="eventTime" value="<%= event.event_time %>">
-        <br>
-        <br>
-        <label for="eventLocation">Event Location: </label>
-        <input type="text" id="eventLocation" name="eventLocation" value="<%= event.event_location %>">
-        <br>
-        <br>
-        <label for="eventAdditionalInfo">Additional Information: </label>
-        <input type="text" id="eventAdditionalInfo" name="eventAdditionalInfo" value="<%= event.event_additionalInfo %>">
-        <br>
-        <br>
-
-        <button class="submit-button" id="addEventButton">Submit</button>
-    
-    </form>
-    <br>
-    <br>
-    <a href="/update_event/delete/<%= event._id %>"> Delete Event </a>
-    ​
-</body>
-
+            <h4>Edit the field that you would like to update, and press Submit.
+            <br> 
+            <br>   
+            Or click "Delete Event" to delet the event. </h4>
+            ​<form action="/update_event/<%= event._id %>" method="POST">
+                <label for="eventName">Event Name: </label>
+                <input type="text" id="eventName" name="eventName" value="<%= event.event_name %>">
+                <br>
+                <br>
+                <label for="eventDate">Event Date: </label>
+                <input type="date" id="eventDate" name="eventDate" value="<%= event.event_date %>">
+                <br>
+                <br>
+                <label for="eventTime">Event Time: </label>
+                <input type="time" id="eventTime" name="eventTime" placeholder="hrs:mins" value="<%= event.event_time %>">
+                <br>
+                <br>
+                <label for="eventLocation">Event Location: </label>
+                <input type="text" id="eventLocation" name="eventLocation" value="<%= event.event_location %>">
+                <br>
+                <br>
+                <label for="eventAdditionalInfo">Additional Information: </label>
+                <input type="text" id="eventAdditionalInfo" name="eventAdditionalInfo" value="<%= event.event_additionalInfo %>">
+                <br>
+                <br>
+                <button class="submit-button" id="addEventButton">Submit</button>
+            </form>
+            <br>
+            <br>
+            <a href="/update_event/delete/<%= event._id %>"> Delete Event </a>
+        </div> ​
+    </body>
 </html>

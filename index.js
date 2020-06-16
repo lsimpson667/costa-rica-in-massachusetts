@@ -130,14 +130,14 @@ app.post('/admin', (req, res) => {
 app.get('/logout',
   (req, res) => {
     req.logout();
-    req.session = null;
     res.redirect('/');
 });
 
   // connect-ensure-login is a middleware ensures that a user is logged in. If a request is received that is unauthenticated, the request will be redirected to a login page. The URL will be saved in the session, so the user can be conveniently returned to the page that was originally requested.
   app.get('/profile', ensureLogin.ensureLoggedIn(),
   (req, res) => {
-    db_handler.collection(ADMIN_COLLECTION).find({username: req.user.username}).toArray((err, user) => {
+      console.log(req.user.cmd.query);
+    db_handler.collection(ADMIN_COLLECTION).find({username: req.user.cmd.query.username}).toArray((err, user) => {
       if(err) return console.log(err)
       let userObject = user[0]
       console.log(userObject)
@@ -358,7 +358,7 @@ app.post('/add_event', (req, res) => {
             console.log("AN EVENT HAS BEEN ADDED");
             // send response to browser once we are done with db
             // redirect sends client to a specified route.
-            res.redirect('/admin/add_event');
+            res.redirect('/admin/view_events');
         }
     })
 });

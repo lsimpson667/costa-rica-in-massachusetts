@@ -14,6 +14,9 @@ body {
     background-color:rgb(48, 48, 95);
     margin: 0;
 }
+a:hover {
+    text-decoration: none;
+}
 
 
 /* navigation bar starts here */
@@ -30,6 +33,9 @@ body {
     top: 0px;
     z-index: 1;
 } */
+nav a {
+    color: white;
+}
 #navbarMainPage {
     background-color: #30305F; 
     position: fixed; 
@@ -196,7 +202,7 @@ select.translator-select  {
 @primary: #fd6b21; // Orange
 
 body { background: @bg;}
-a { color: white; text-decoration: none; }
+.arrow a { color: white; text-decoration: none; }
 
 .arrow {
   text-align: center;
@@ -375,21 +381,23 @@ hr#beginningOfSection3 {
     /* background-color: #ffc0cb; */
 
     color: white;
-    width: 1400px;
-    /* padding: 0 0 0 0; */
+    /* width: 1400px; */
+    padding: 0 40px;
     display: flex;
     align-items: center;
-    /* justify-content: center; */
+    justify-content: center;
+    justify-content: space-between;
+
     border-radius: 7px;
     /* height: 600px; */
-    /* flex-wrap: wrap; */
-    flex-direction: column;
+    flex-wrap: wrap;
+    /* flex-direction: column; */
 }
 .album-container {
     /* background-color: rgb(26, 224, 26); */
 
     /* display: flex; */
-    flex-direction: column;
+    /* flex-direction: column; */
     /* justify-content: center; */
     /* align-items: center; */
     width: 350px;
@@ -512,7 +520,7 @@ hr#beginningOfSection5 {
     width: 600px;
   }
 
-  input[type=text], select, textarea {
+  .form-container input[type=text], select, textarea {
     width: 90%;
     padding: 12px;
     border: 1px solid #ccc;
@@ -521,14 +529,14 @@ hr#beginningOfSection5 {
     margin-left: 45px;
     font-family: 'Poppins', sans-serif;    
   }
-  label {
+  .form-container label {
     padding: 5px 5px 5px 0;
     display: inline-block;
     width: 200px;
     margin-right: 20px;
   }
   
-  input[type=submit] {
+  .form-container input[type=submit] {
     background-color: #4CAF50;
     color: white;
 
@@ -538,7 +546,7 @@ hr#beginningOfSection5 {
     float: right;
   }
   
-  input[type=submit]:hover {
+  .form-container input[type=submit]:hover {
     background-color: #45a049;
   }
  
@@ -637,6 +645,9 @@ background-color: white;
     padding: 40px 0;
     color: white;
 }
+.footer-facebook-promo #fa {
+    color: white;
+}
 #fa:hover {
     position: relative;
     top: -3px;
@@ -685,10 +696,117 @@ width: 700px;
 }
 
 /* Admin section */
-.admin-links a {
-    text-decoration: none
+#login_page {
+    
+}
+#login {
+    text-align: center;
+    color: white;
+    background-color: lightskyblue;
+    width: 400px;
+    border-radius: 10px;
+    padding: 50px 0;
+}
+#register {
+    text-align: center;
+    color: white;
+    background-color: lightskyblue;
+    width: 400px;
+    border-radius: 10px;
+    padding: 20px 0;
+}
+.register_icon {
+    padding: 10px 0 60px 0;
+}
+.profile_container {
+    text-align: center;
+    color: white;
+    background-color: lightskyblue;
+    width: 400px;
+    border-radius: 10px;
+    padding: 20px 0;
+    
 }
 
+.admin-links a {
+    text-decoration: none;
+}
+
+.admin_main_container {
+    margin: 100px 40px 300px 40px;
+    display: flex;
+    flex-direction: column;
+    
+}
+.admin_button {
+    width: 100px;
+    background-color: rgb(70, 70, 238);
+    color: white;
+    border: 1px solid black;
+    border-radius: 10px;
+    text-decoration: none;
+}
+#logout_button {
+    width: 100px;
+    background-color: #30305F;
+    /* color: black; */
+    border: 1px solid rgb(70, 70, 238);
+    border-radius: 10px;
+    
+}
+#logout_button:hover {
+    position: relative;
+    top: -3px;
+}
+#register_page_button {
+    width: 200px;
+    border: 1px solid black;
+    border-radius: 10px;
+    color: black;
+
+}
+.admin_button:hover {
+    background-color:#30305F;
+    color: white;
+    position: relative;
+    top: -3px;
+
+    
+}
+.return-to-admin{
+    background-color: grey;
+    color: black;
+    border: 1px solid black;
+    border-radius: 10px;
+    text-decoration: none;
+}
+.admin_heading{
+ text-align: center;
+ margin-bottom: 130px;
+ color: white;
+}
+.admin_options {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    
+}
+.option_container {
+    text-align: center;
+    color: lightskyblue;
+    padding: 10px 50px;
+    margin: 0 0 40px 0;
+}
+.admin_icons {
+    color: lightskyblue;
+}
+.admin_instructions {
+    /* color: white; */
+}
+.goog-text-highlight:hover {
+    background-color: transparent;
+    box-shadow: none;
+}
 /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
 @media screen and (max-width: 600px) {
     .col-25, .col-75, input[type=submit] {
@@ -704,7 +822,7 @@ width: 700px;
       width: 100%; /* The width is 100%, when the viewport is 11600px or smaller */
       flex-direction: column;
     }
-    .who-we-are-subcontainer, .events-subcontainer {
+    .who-we-are-subcontainer, .events-subcontainer, .photo-albums-subcontainer {
         flex-wrap: wrap;
         
       }
