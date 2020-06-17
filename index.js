@@ -122,7 +122,7 @@ app.post('/admin', (req, res) => {
 
           console.log("One Entry Added");
           console.log(`Entry ${result}`)
-          res.redirect('/register');
+          res.redirect('/admin');
       }
   });
 });
@@ -434,7 +434,7 @@ app.post('/update_event/:event_id', (req, res)  => {
         } else {
             console.log(result);
         
-        res.redirect('/admin/update_event/' + event_id);
+        res.redirect('/admin/event_details/' + event_id);
         }
     });
 });

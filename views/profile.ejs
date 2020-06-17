@@ -3,14 +3,15 @@
 
 <div class="admin_main_container">
 
-  <button class="admin_button"><a class="return-to-admin" href="/admin" >Return to Admin Page</a></button>
+  <button class="pofile_page_button"><a href="/admin" >Return to Admin Options</a></button>
   <br><br>
 
   <div class="profile_container">
     <h1>Profile</h1>
+    <i class="fa fa-user fa-5x profile_icon" aria-hidden="true"></i>
     <p>
       Username: <%= user.username %><br/>
-      Name: <%= user.displayname %><br/>
+      Display Name: <%= user.displayname %><br/>
       <% if (user.email) { %>
       Email: <%= user.email %><br/>
       <% } %>
