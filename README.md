@@ -5,8 +5,10 @@ The purpose of my website is to create a professionally appealing online presenc
 -	Advertise their events and provide resources for Costa Ricans living in Massachusetts
 
 
-Graphic:
-When the user enters my website, they can see the full homepage and the events page. However, I have also created an admin portal from scratch. Only administrators are able to login and use this part of the website. Pictures 2 - 5 are pictures of what the Admin Portal looks like. Picture 1 is the top of the home page of my website.
+Graphics:
+When the user enters my website, they can see the full homepage and the events page. However, I have also created a fully functional admin portal from scratch. Only administrators are able to login and use this part of the website. Pictures 2 - 5 are pictures of what the Admin Portal looks like. Picture 1 is the top of the home page of my website.
+
+
 
 Setup:
 This repo requires HTML, CSS, JS, MongoDB, Express, Node.js, and Bootstrap
