@@ -8,7 +8,14 @@ Setup:
 This repo requires HTML, CSS, JS, MongoDB, Express, Node.js, and Bootstrap
 
 Graphics:
-When the user enters my website, they can see the full homepage and the events page (Pictures 1 -8). In addition, I have created a fully functional admin portal from scratch. Only administrators are able to login and see/use the Admin Portal (Pictures 9 and 10).  
+When the user enters my website, they can see the full homepage and the events page (Pictures 1 -8). In addition, I have created a fully functional admin portal from scratch. Only administrators are able to login and see/use the Admin Portal (Pictures 9 and 10). In the Admin Portal, administrators can do the folowing:
+- see their profile page
+- see all events
+- add an event
+- edit an event
+- delete an event 
+- see user entries
+- register sn administrator
 
 #1
 ![image](https://user-images.githubusercontent.com/49005921/85068076-c73f5180-b17f-11ea-94da-d959b2778727.png)
