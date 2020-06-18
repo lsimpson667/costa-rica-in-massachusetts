@@ -15,7 +15,7 @@ When the user enters my website, they can see the full homepage and the events p
 - edit an event
 - delete an event 
 - see user entries
-- register sn administrator
+- register an administrator
 
 #1
 ![image](https://user-images.githubusercontent.com/49005921/85068076-c73f5180-b17f-11ea-94da-d959b2778727.png)
