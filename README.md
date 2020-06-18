@@ -9,7 +9,7 @@ Graphics:
 When the user enters my website, they can see the full homepage and the events page (Pictures 1 -8). In addition, I have created a fully functional admin portal from scratch. Only administrators are able to login and use this part of the website. Pictures 9 and 10 are pictures of what the Admin Portal looks like. 
 
 #1
-![2020-06-18 (6)](https://user-images.githubusercontent.com/49005921/85066228-872a9f80-b17c-11ea-85bc-78d5a076d41e.png)
+![image](https://user-images.githubusercontent.com/49005921/85068076-c73f5180-b17f-11ea-94da-d959b2778727.png)
 #2
 ![image](https://user-images.githubusercontent.com/49005921/85067073-14babf00-b17e-11ea-9971-72180ec1ab76.png)
 #3
