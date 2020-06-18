@@ -4,9 +4,11 @@ Costa Rica En Massachusetts is a website that grows and engages the community of
 The purpose of my website is to create a professionally appealing online presence for the Costa Rica En Massachusett Organization. There was a need for a central website where the organization could 
 -	Advertise their events and provide resources for Costa Ricans living in Massachusetts
 
+Setup:
+This repo requires HTML, CSS, JS, MongoDB, Express, Node.js, and Bootstrap
 
 Graphics:
-When the user enters my website, they can see the full homepage and the events page (Pictures 1 -8). In addition, I have created a fully functional admin portal from scratch. Only administrators are able to login and use this part of the website. Pictures 9 and 10 are pictures of what the Admin Portal looks like. 
+When the user enters my website, they can see the full homepage and the events page (Pictures 1 -8). In addition, I have created a fully functional admin portal from scratch. Only administrators are able to login and see/use the Admin Portal (Pictures 9 and 10).  
 
 #1
 ![image](https://user-images.githubusercontent.com/49005921/85068076-c73f5180-b17f-11ea-94da-d959b2778727.png)
@@ -32,5 +34,4 @@ When the user enters my website, they can see the full homepage and the events p
 
 
 
-Setup:
-This repo requires HTML, CSS, JS, MongoDB, Express, Node.js, and Bootstrap
+
