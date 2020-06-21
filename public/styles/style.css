@@ -12,27 +12,12 @@ body {top:0 !important;}
 body {
     font-family: 'Poppins', sans-serif;    
     background-color:rgb(48, 48, 95);
-    /* margin: 0; */
+    width:auto;
 }
 a:hover {
     text-decoration: none;
 }
-
-
-/* navigation bar starts here */
-/* .nav {
-    background-color:rgb(48, 48, 95);
-    height: 65px;
-    width: 100%;
-    display: flex;
-    border-bottom: solid white 1px;
-    align-items: center;
-    position: fixed;
-    top: 0;
-    left: 0px;
-    top: 0px;
-    z-index: 1;
-} */
+/* Navbar starts here */
 nav a {
     color: white;
 }
@@ -43,37 +28,19 @@ nav a {
     z-index: 1;
     border-bottom: 1px solid white;
 }
-.collapse {
-    /* display: flex;
-    flex-direction: column; */
 
-}
 .navbar-toggler {
     margin-right: 20px;
 }
 .logo-container{
-    /* background-color: pink; */
-    /* width:100px;
-    margin-left:10px; */
     margin-right:100px;
-    /* margin-top: 0;
-    padding-top: 0;
-    top: 0;  */
-    
 }
 .navbar-toggler {
     border: 1px solid white;
 }
-.navbar-brand {
-    /* display: inline;
-    padding-top: 0; */
-}
-/* .translator-and-home {
-    display: flex;
-} */
+
 .translator-container {
     display: flex;
-    /* width: 300px; */
     margin-right: 90px;
 }
 
@@ -81,7 +48,6 @@ nav a {
     padding-left: 5px;
 }
 select.translator-select  {
-    /* padding-left: 0px; */
     margin-left: 5px;
     width: 178px;
     padding: 5px 5px;
@@ -92,9 +58,7 @@ select.translator-select  {
     padding: 0 20px;
     border-radius: 20px;
     margin-right: 30px;
-    /* margin-top: 10px; */
-    
-   
+
 }
 .home-button-container a {
     color: black;
@@ -103,26 +67,12 @@ select.translator-select  {
     background-color: lightskyblue;
     color: rgb(48, 48, 95);
 }
-/* font {
-    sty
-} */
 .tabs-container {
-    /* background-color: pink; */
     margin-right: 30px;
     display: flex;
    
 }
-.tab-button {
-    /* padding: 20px 0; */
-}
-.tab-button.nav-link {
-    /* background-color: purple; */
-    /* width: 145px; */
-    /* justify-content: center; */
-    /* justify-content: space-between; */
-    /* padding: 20px; */
-    /* margin-right: 30px; */
-}
+
 .tab-button:hover {
     background-color: lightskyblue;
     color: rgb(48, 48, 95);
@@ -130,9 +80,6 @@ select.translator-select  {
     
 }
 .icon-nav-container {
-    /* width: 50px;
-    margin: 15px 40px 0 0; */
-    /* margin-right: 2px; */
     margin-top: 3px;
 }
 .icon-nav-container .fa:hover {
@@ -141,7 +88,8 @@ select.translator-select  {
 }
 /* banner starts here */
 .main-container {
-    width: 98.9vw; /* <<<<<<<<<<<< Controls ENTIRE PAGE WIDTH>>>>>>>>>>>>>>>>>>>>>>>>> */
+    /* width: 98.9vw; <<<<<<<<<<<< Controls ENTIRE PAGE WIDTH>>>>>>>>>>>>>>>>>>>>>>>>> */
+    width: auto;
     display: flex;
     flex-direction: column;
 }
@@ -157,9 +105,8 @@ select.translator-select  {
     background-color: mediumturquoise;
     text-align: center;
     align-items: center;
-    width: 100%;
+    width: auto;
     height: 725px;
-    /* margin-top: 60px; */
 
 }
 
@@ -229,13 +176,15 @@ body { background: @bg;}
 /* Main Subcontainer starts here */
 .main-subcontainer {
     color:white;
+    width: auto;
 }
 
 /* Mision and values section start here */
 hr#beginningOfSection1 {
     padding-bottom: 80px;
     margin: 0;
-    width: 99.9%;
+    /* width: 99.9%; */
+    width: auto;
     background-color: goldenrod;
     border: 1px solid goldenrod;
 }
@@ -245,7 +194,6 @@ hr#beginningOfSection1 {
 
 .mission-and-values-container {
     background-color: goldenrod;
-   padding: 0 300px 50px 300px;
    display: flex;
    flex-direction: column;
    text-align: center;
@@ -280,7 +228,7 @@ hr#beginningOfSection2 {
     justify-content: center;
     justify-content: space-between;
     align-items: center;
-    width: 90vw;
+    width: auto;
 }
 .individual-event-container {
     background-color: white;
@@ -297,8 +245,6 @@ hr#beginningOfSection2 {
     text-align: center;
 }
 .events-image-container1 {
-    /* background-color: lime; */
-
     width: 300px;
     height: 200px;
     background-image: url(../images/bbq.jpg);
@@ -308,8 +254,6 @@ hr#beginningOfSection2 {
 
 }
 .events-image-container2 {
-    /* background-color: lime; */
-
     width: 300px;
     height: 200px;
     background-image: url(../images/christmas2.jpg);
@@ -319,7 +263,6 @@ hr#beginningOfSection2 {
 
 }
 .events-image-container3 {
-    /* background-color: lime; */
     width: 300px;
     height: 200px;    
     background-image: url(../images/microphone.jpg);
@@ -330,23 +273,18 @@ hr#beginningOfSection2 {
 }
 .events-image-container1:hover{
     zoom: 1.1;
-    /* border: px solid lightskyblue; */
 }
 .events-image-container2:hover{
     zoom: 1.1;
-    /* border: px solid lightskyblue; */
 }
 .events-image-container3:hover{
     zoom: 1.1;
-    /* border-radius: 7px; */
-    /* border: px solid lightskyblue; */
 }
 .individual-event-container a {
     text-decoration: none;
     color: black;
 }
 .event-name:hover {
-    /* font-size: 120%; */
     font-weight: bold;
     
 }
@@ -378,10 +316,7 @@ hr#beginningOfSection3 {
     padding-bottom: 50px;
 }
 .photo-albums-subcontainer {
-    /* background-color: #ffc0cb; */
-
     color: white;
-    /* width: 1400px; */
     padding: 0 40px;
     display: flex;
     align-items: center;
@@ -389,46 +324,24 @@ hr#beginningOfSection3 {
     justify-content: space-between;
 
     border-radius: 7px;
-    /* height: 600px; */
     flex-wrap: wrap;
-    /* flex-direction: column; */
 }
 .album-container {
-    /* background-color: rgb(26, 224, 26); */
-
-    /* display: flex; */
-    /* flex-direction: column; */
-    /* justify-content: center; */
-    /* align-items: center; */
     width: 350px;
-    /* padding-left: 10px; */
-    /* padding-top: 40px; */
     text-align: center;
     
 }
 .album-image-container {
-    background-color: red;
-
     width: 250px;
     border-radius:7px;
 
     position: relative;
-    /* width: 40%; */
     max-width: 300px;
-    /* margin-bottom: 50px; */
 
 }
-/* .album-image-container.large {
-    height: 300px;
-}
-.album-image-container.small {
-    height: 100px;
-} */
+
 .album-image {
     background-color: rgb(245, 23, 160);
-
-    /* max-width: 100%; */
-    /* max-height: 100%; */
     display: block; /* remove extra space below image */
     border-radius: 7px;
     border: 5px solid white; 
@@ -460,8 +373,6 @@ hr#beginningOfSection3 {
 .album-image-container:hover {
     position: relative;
     top: -4px;
-    /* opacity: 1.5; */
-    /* filter: grayscale(100%); */
     filter: brightness(50%);
 }
 
@@ -588,7 +499,6 @@ hr#beginningOfSection5 {
 }
 .contacts-right-container {
 background-color: #f2f2f2;
-/* padding: 20px; */
 height: 370px;
 border-radius: 4px;
 margin-top: 55px;
@@ -598,17 +508,15 @@ margin-top: 55px;
     padding: 20px 20px 0px 20px; 
 }
 
-
 /* footer starts here */
 footer {
     background-color: white;
     display: flex;
-    /* flex-direction: column; */
     justify-content: center;
     align-items: center;
     color: black;
-    /* height: 700px; */
     border-top: 5px solid black;
+    width: auto;
 }
 .footer-left-container {
 width: 60vw;
@@ -616,7 +524,6 @@ border-right: 20px solid black;
 border-top-right-radius: 50%;
 border-bottom-right-radius: 50%;
 height: 700px;
-/* text-align: center; */
 padding-top: 120px;
 padding-right: 50px;
 padding-left: 50px;
@@ -638,7 +545,6 @@ background-color: white;
     border-radius: 7px;
     display: flex;
     flex-direction: column;
-    /* justify-content: center; */
     align-items: center;
     text-align: center;
     margin-left: 45px;
@@ -654,7 +560,6 @@ background-color: white;
     color: lightskyblue;
 }
 .footer-right-container {
-    /* padding-left: 50px; */
     padding-right: 50px;
 }
 .footer-logo {
@@ -665,19 +570,16 @@ width: 700px;
 }
 
 /* ****EVENTS PAGE SECTION STATS HERE */
-.evets-body-color {
-    background-color: white;
-}
-
 .body-content-container {
     display: flex;
+    background-color: white;
+    width: auto;
 }
 
 .events-page-h3-container {
     margin-top: 250px;
 }
 .event-list {
-    /* background-color: green; */
     padding-top:100px;
     display: flex;
     flex-direction: column;
@@ -687,7 +589,6 @@ width: 700px;
 }
 
 .event-border {
-    /* background-color: orange; */
     border: 5px solid lightskyblue;
     padding: 0 10px 10px 10px;
     margin-top: 5px;
@@ -764,7 +665,6 @@ width: 700px;
 #logout_button {
     width: 100px;
     background-color: #30305F;
-    /* color: black; */
     border: 1px solid rgb(70, 70, 238);
     border-radius: 10px;
     
@@ -825,46 +725,62 @@ width: 700px;
 .admin_icons:hover {
     color: lightskyblue;
 }
-.admin_instructions {
-    /* color: white; */
-}
+
 .goog-text-highlight:hover {
     background-color: transparent;
     box-shadow: none;
 }
-/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 600px) {
-    .col-25, .col-75, input[type=submit] {
-      width: 100%;
-      margin-top: 0;
-    }
-  }
 
 /* Responsive */
 /* Use a media query to add a breakpoint at 1160px: */
 @media screen and (max-width: 1160px) {
-    .contacts-right-container, .contacts-subcontainer,  .map {
-      width: 100%; /* The width is 100%, when the viewport is 11600px or smaller */
-      flex-direction: column;
-    }
-    .who-we-are-subcontainer, .events-subcontainer, .photo-albums-subcontainer {
-        flex-wrap: wrap;
-        
-      }
+    
   }
 
   @media screen and (max-width: 1160px) {
     
   }
 
-  /* Extra small devices (phones, less than 768px) */
-/* No media query since this is the default in Bootstrap */
+/* On screens that are 992px wide or less, style as follows */
+@media screen and (max-width: 992px) {
+    .footer-logo img{
+        width: 400px;
+    }   
+    .contacts-right-container, .contacts-subcontainer {
+        width: auto; 
+        flex-direction: column;
+      }
+      .who-we-are-subcontainer, .events-subcontainer, .photo-albums-subcontainer {
+          flex-wrap: wrap;
+          
+        }
+        .map {
+            width: 100%;
+        }
+  }
+  
+  /* On screens that are 600px wide or less, the background color is olive */
+  @media screen and (max-width: 600px) {
+    .footer-logo img{
+        width: 150px;
+    }
+    /* user contacts form: make the two columns stack on top of each other instead of next to each other  */
+    .col-25, .col-75, input[type=submit] {
+        width: 100%;
+        margin-top: 0;
+      }
+    
 
-/* Small devices (tablets, 768px and up) */
-@media (min-width: @screen-sm-min) { ... }
 
-/* Medium devices (desktops, 992px and up) */
-@media (min-width: @screen-md-min) { ... }
 
-/* Large devices (large desktops, 1200px and up) */
-@media (min-width: @screen-lg-min) { ... }
+
+    .form-container input[type=text], select, textarea {
+        width: 90%;
+        padding: 12px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        resize: vertical;
+        margin-left: 45px;
+        font-family: 'Poppins', sans-serif;    
+      }
+  }
