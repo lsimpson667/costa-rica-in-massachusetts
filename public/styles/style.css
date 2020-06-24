@@ -806,15 +806,15 @@ width: 700px;
     /* Banner Responsiveness */
     .banner-heading-container {
         margin-top: 0;
-        padding: 20px 20px
+        padding: 10px 20px
     }
 
     .banner-heading-container h1 {
-        font-size: 32px;
+        font-size: 30px;
     }
     .banner-subheading {
         margin-top: 10px;
-        font-size: 24px;
+        font-size: 22px;
     }
     .flag {
         width: 200px;
