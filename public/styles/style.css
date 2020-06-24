@@ -850,7 +850,9 @@ width: 700px;
         width: auto;
         margin-left: 0px;  
       } 
-    
+      .submit-button {
+        margin-left: 50px;
+    }
     /* footer responsiveness */
     footer {
         padding: 30px;
@@ -871,23 +873,30 @@ width: 700px;
         padding-right: 0px;
         padding-left: 0px;
         
-        }
+    }
        
-        .footer-facebook-promo {
-            width: 200px;
-            margin-left: 0px;
-        }
+    .footer-facebook-promo {
+        width: 200px;
+        margin-left: 0px;
+    }
       
-        .footer-right-container {
-            padding-right: 0px;
+    .footer-right-container {
+        padding-right: 0px;
             
-        }
-        .footer-logo {
-            padding-left: 0px;
-        }
-        .footer-logo img{
-            width: 350px;
-        }
-    
-
+    }
+    .footer-logo {
+        padding-left: 0px;
+    }
+    .footer-logo img{
+        width: 350px;
+    }
+    /* EVENTS PAGE RESPONSIVENESS */
+    .event-border {
+        border: 5px solid lightskyblue;
+        padding: 0 10px 10px 10px;
+        margin-top: 5px;
+        margin-right: 5px;
+        
+        width: auto;
+    }
   }
