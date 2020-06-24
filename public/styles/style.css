@@ -847,11 +847,13 @@ width: 700px;
         padding: 20px 0 20px 45px;
         color: black;
         width: auto;
+        height: auto;
       }
     
       .form-container input[type=text], select, textarea {
         width: auto;
         margin-left: 0px;  
+        
       } 
       .submit-button {
         margin-left: 50px;
@@ -903,3 +905,23 @@ width: 700px;
         width: auto;
     }
   }
+
+    /* ADMIN PORTAL RESPONSIVENESS */
+    #login {
+        width: auto;
+        padding: 20px 30px;
+        height: 300px;
+    }
+    .login input[type=text], input[type=password] {
+        width: auto;
+    }
+    #register {
+        width: auto;
+        padding: 20px 40px;
+    }
+    #register input[type=text]{
+        width: auto;
+    }
+    .profile_container {
+        width: auto;        
+    }
