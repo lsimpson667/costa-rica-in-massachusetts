@@ -805,20 +805,21 @@ width: 700px;
     
     /* Banner Responsiveness */
     .banner-heading-container {
-        margin-top: 0;
-        padding: 10px 20px
+        margin-top: -60px;        
+        padding: 20px 20px
     }
 
     .banner-heading-container h1 {
-        font-size: 30px;
+        font-size: 32px;
     }
     .banner-subheading {
-        margin-top: 10px;
-        font-size: 22px;
+        margin-top: 30px;
+        font-size: 24px;
     }
     .flag {
         width: 200px;
         margin-top: 10px;
+
     }
 
     /* Gallery Responsiveness */
