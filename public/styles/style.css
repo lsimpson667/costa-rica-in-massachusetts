@@ -203,7 +203,7 @@ h2.header {
     text-align: center;
 }
 
-/* Events start section Here */
+/* Events section starts Here */
 hr#beginningOfSection2 {
     padding-bottom: 80px;
     margin: 0;
@@ -218,6 +218,9 @@ hr#beginningOfSection2 {
     flex-direction: column;
     align-items: center;
     height: auto;
+}
+.small-view {
+    display: none;
 }
 .user-instructions {
  margin-bottom: 50px;
@@ -306,6 +309,9 @@ hr#beginningOfSection3 {
 .featured-videos iframe {
     border-radius: 7px;
     border: 5px solid white;
+    width: 640px; 
+    height: 360px;
+
 }
 .photo-albums-container {
     color: white;
@@ -749,38 +755,139 @@ width: 700px;
     .contacts-right-container, .contacts-subcontainer {
         width: auto; 
         flex-direction: column;
-      }
-      .who-we-are-subcontainer, .events-subcontainer, .photo-albums-subcontainer {
-          flex-wrap: wrap;
+    }
+    .who-we-are-subcontainer, .events-subcontainer, .photo-albums-subcontainer {
+        flex-wrap: wrap;
           
-        }
-        .map {
-            width: 100%;
-        }
+    }
+    .map {
+        width: 100%;
+    }
   }
   
-  /* On screens that are 600px wide or less, the background color is olive */
+  /* On screens that are 600px wide or less, style it as follows: */
   @media screen and (max-width: 600px) {
-    .footer-logo img{
-        width: 150px;
+    /* Events Responsiveness */
+    .small-view {
+        background-color: white;
+        text-align: center;
+        border-radius: 10px;
+        display: block;
     }
+    .sv-event-image-container {
+        padding: 20px 0 0 0px;
+    }
+    .sv-event-image-container img {
+        /* width: 300px; */
+        height:350px;
+        border-radius: 7px;
+    }
+    .small-view .sv-event-name {
+        color: black;
+    }
+    .user-instructions {
+        display: none;
+    }
+    .individual-event-container {
+        display: none;
+    }
+    .events-image-container1 {
+       display: none;
+    
+    }
+    .events-image-container2 {
+        display: none;
+    
+    }
+    .events-image-container3 {
+        display: none;
+    }
+    
+    /* Banner Responsiveness */
+    .banner-heading-container {
+        margin-top: 0;
+        padding: 20px 20px
+    }
+
+    .banner-heading-container h1 {
+        font-size: 32px;
+    }
+    .banner-subheading {
+        font-size: 24px;
+    }
+    .flag {
+        width: 200px;
+    }
+
+    /* Gallery Responsiveness */
+    .featured-videos {
+        margin: 0;
+    }
+    .featured-videos iframe {
+        border-radius: 7px;
+        border: 5px solid white;
+        width: 340px; 
+        height: 260px;
+    }
+
+
     /* user contacts form: make the two columns stack on top of each other instead of next to each other  */
     .col-25, .col-75, input[type=submit] {
         width: 100%;
         margin-top: 0;
       }
+      /* contacts form responsiveness */
+      .form-container {
+        box-sizing: border-box;
+        border-radius: 5px;
+        background-color: #f2f2f2;
+        padding: 20px 0 20px 45px;
+        color: black;
+        width: auto;
+      }
+    
+      .form-container input[type=text], select, textarea {
+        width: auto;
+        margin-left: 0px;  
+      } 
+    
+    /* footer responsiveness */
+    footer {
+        padding: 30px;
+        /* font-size: 10px; */
+        display: flex;
+        flex-direction: column;
+        width: auto;
+    }
+    .phone-number {
+        font-size: 26px;
+    }
+    .footer-left-container {
+        border-right: none;
+        border-top-right-radius: 0%;
+        border-bottom-right-radius: 0%;
+        height: auto;
+        padding-top: 0px;
+        padding-right: 0px;
+        padding-left: 0px;
+        
+        }
+       
+        .footer-facebook-promo {
+            width: 200px;
+            margin-left: 0px;
+        }
+      
+        .footer-right-container {
+            padding-right: 0px;
+            
+        }
+        .footer-logo {
+            padding-left: 0px;
+        }
+        .footer-logo img{
+            width: 350px;
+        }
     
 
-
-
-
-    .form-container input[type=text], select, textarea {
-        width: 90%;
-        padding: 12px;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        resize: vertical;
-        margin-left: 45px;
-        font-family: 'Poppins', sans-serif;    
-      }
   }

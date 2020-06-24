@@ -38,7 +38,21 @@
                 Eventos
             </h2>
         </div>
-    
+        <!-- hidden when screen i above 600 px -->
+        <div class="small-view">
+            <div class="event-small-view"> <!-- Event1 starts here -->
+                <a href="/events">
+                    <div class="sv-event-image-container">
+                        <img src="/images/sv-events.jpg">
+                    </div>
+                    <div class="event description">
+                    <p class="sv-event-name">
+                        Haga clic aquí para ver nuestra <br>lista de eventos.                  </p>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <!-- hidden when screen i above 600 px -->
         <div class="user-instructions">
             <!-- <p>
                 Click on the names of the events below to learn about our events.
@@ -59,6 +73,7 @@
                             Evento de Derano -->
                             Festejo Tico
                         </p>
+
                     </a>
                 </div>
                 
@@ -99,7 +114,7 @@
     </div>
     <div class="featured-videos">
         <h3>Festejo Tico 2019</h3>
-        <iframe width="640" height="360" src="https://www.youtube.com/embed/ugPnaMkSXQA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/ugPnaMkSXQA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         <!-- <img src="/images/logoSeeThrough-Copy.png" class="gallery-logo"> -->
     </div>
     <br>
@@ -296,7 +311,7 @@
                             <label for="userPhoneNumber">Número de Teléfono: </label>
                         </div>
                         <div class="col-75">
-                            <input type="text" id="userPhoneNumber" name="userPhoneNumber" size="50" pattern="[0-9-]+" placeholder="Número De Teléfono" required><br>
+                            <input type="text" id="userPhoneNumber" name="userPhoneNumber" pattern="[0-9-]+" placeholder="Número De Teléfono" required><br>
                         </div>
                     </div>
                     <div class="address-container">
@@ -305,7 +320,7 @@
                                 <label for="userAddress">Dirección Postal:</label>
                             </div>
                             <div class="col-75">
-                                <input type="text" id="userAddress" name="userAddress" size="68.9" placeholder="Dirección Postal" required><br>
+                                <input type="text" id="userAddress" name="userAddress" placeholder="Dirección Postal" required><br>
                             </div>
                         </div>
                         <div class="row">
@@ -338,7 +353,7 @@
                             <label for="HearAboutUs">¿Cómo te enteraste <br>de nosotros?: </label>
                         </div>
                         <div class="col-75">
-                            <textarea type="text" id="HearAboutUs" name="HearAboutUs" rows="2" cols="53" placeholder="Referencia"></textarea><br>
+                            <textarea type="text" id="HearAboutUs" name="HearAboutUs" placeholder="Referencia"></textarea><br>
                         </div>
                     </div>
 
@@ -347,7 +362,7 @@
                             <label for="userComment">Comentarios: </label>
                         </div>
                         <div class="col-75">
-                            <textarea type="text" id="userComment" name="userComment" rows="8" cols="53" placeholder="Comentarios" required></textarea>
+                            <textarea type="text" id="userComment" name="userComment" placeholder="Comentarios" required></textarea>
                         </div>
                     </div>
                 
