@@ -606,12 +606,11 @@ width: 700px;
 .admin_page_container {
     margin-left: 100px;
 }
-
 #login {
     text-align: center;
     color: white;
     background-color: lightskyblue;
-    width: 400px;
+    /* width: 400px; */
     border-radius: 10px;
     padding: 50px 0;
 }
@@ -649,7 +648,6 @@ width: 700px;
     position: relative;
     top: -2px;
 }
-
 .admin-links a {
     text-decoration: none;
 }
@@ -716,8 +714,7 @@ width: 700px;
 .admin_options {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
-    
+    justify-content: space-evenly;    
 }
 .option_container {
     text-align: center;
@@ -909,11 +906,14 @@ width: 700px;
     /* ADMIN PORTAL RESPONSIVENESS */
     #login {
         width: auto;
-        padding: 20px 30px;
+        padding: 20px 30px 0px 30px;
         height: 300px;
     }
     .login input[type=text], input[type=password] {
-        width: auto;
+        width: 200px;
+    }
+    .admin_main_container {
+        margin-left: 5px;
     }
     #register {
         width: auto;
