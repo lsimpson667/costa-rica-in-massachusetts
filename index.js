@@ -115,15 +115,14 @@ app.post('/admin', (req, res) => {
   db_handler.collection(ADMIN_COLLECTION).insertOne(my_object, (err, result) => {
   
     if (err) {
-            console.log(result);
-          console.log("Error: " + err);
-      }
-      else {
-
-          console.log("One Entry Added");
-          console.log(`Entry ${result}`)
-          res.redirect('/admin');
-      }
+        console.log(result);
+        console.log("Error: " + err);
+    }
+    else {
+        console.log("One Entry Added");
+        console.log(`Entry ${result}`)
+        res.redirect('/admin');
+    }
   });
 });
   
